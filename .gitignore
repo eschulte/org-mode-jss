@@ -1,9 +1,13 @@
 *.sqlite
+.Rhistory
 *.aux
 *.bbl
 *.blg
 *.log
 *.out
+*.dvi
 *.pdf
 *.tex
 *~
+country-codes.csv
+raw-temps.csv
