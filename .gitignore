@@ -1,1 +1,9 @@
 *.sqlite
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.pdf
+*.tex
+*~
