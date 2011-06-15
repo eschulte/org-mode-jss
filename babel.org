@@ -807,7 +807,7 @@ blocks.
 #+end_src
 
 #+source: pascals-triangle
-#+begin_src python :var n=5 :exports none :return pascals_triangle(5)
+#+begin_src python :var n=5 :exports none
   def pascals_triangle(n):
       if n == 0:
           return [[1]]
@@ -1244,7 +1244,8 @@ rather than storing the data as plain text in the [[latex:proglang][Org-mode]] b
 #+end_src
 
 #+headers: :var raw-temps-file=raw-temps :var codes-file=country-codes
-#+begin_src sqlite :db climate.sqlite :exports none :results silent
+#+headers: :exports (if (file-exists-p "climate.sqlite") "silent" "results")
+#+begin_src sqlite :db climate.sqlite :exports results :results silent
   drop table if exists temps;
   create table temps (country,station,replicate,year,jan,feb,
          mar,apr,may,jun,jul,aug,sep,oct,nov,dec);
