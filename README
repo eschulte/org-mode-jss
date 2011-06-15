@@ -32,7 +32,7 @@ referenced figures.
    file.  From here it is possible to navigate the document within
    Org-mode inspecting and interactively evaluating code examples.
    Export the document to LaTeX with the M-x org-export-as-latex
-   command.
+   command---just press RET if prompted by R about saving data files.
 
 6. The resulting babel.tex file can be build normally using the
    pdflatex command.  Alternatively once all requirements have been
