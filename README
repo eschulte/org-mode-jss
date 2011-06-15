@@ -34,7 +34,7 @@ referenced figures.
    Export the document to LaTeX with the M-x org-export-as-latex
    command---just press RET if prompted by R about saving data files.
 
-6. The resulting babel.tex file can be build normally using the
+6. The resulting babel.tex file can be built normally using the
    pdflatex command.  Alternatively once all requirements have been
    included these last two steps can be performed by simply calling
    make within this directory.
