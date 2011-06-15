@@ -12,6 +12,7 @@
    (org        . t)
    (perl       . t)
    (python     . t)
+   (R          . t)
    (ruby       . t)
    (sh         . t)
    (sqlite     . t)))
