@@ -1283,7 +1283,7 @@ exits, so they can be manipulated by other [[latex:proglang][R]] code blocks tha
 
 #+source: R-init
 #+headers: :var dbname="climate.sqlite"
-#+begin_src R :session *R-climate* :exports results :results silent
+#+begin_src R :session *R-climate* :exports none :results silent
     library("RSQLite")
     con <- dbConnect(dbDriver("SQLite"), dbname=dbname)
     query <- paste("SELECT temps.station, temps.year, temps.jul", 
