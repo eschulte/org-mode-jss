@@ -6,7 +6,7 @@
 #+LATEX_HEADER: \usepackage{mathpazo}
 #+LATEX_HEADER: \usepackage{thumbpdf,natbib}
 #+LATEX_HEADER: \Plainauthor{Eric Schulte, Dan Davison, Thomas Dye, Carsten Dominik}
-#+LATEX_HEADER: \author{Eric Schulte\\University of New Mexico \And Dan Davison\\University of Oxford \AND Thomas Dye\\University of Hawai`i \AND Carsten Dominik\\University of Amsterdam and Radboud University Nijmegen}
+#+LATEX_HEADER: \author{Eric Schulte\\University of New Mexico \And Dan Davison\\University of Oxford and Counsyl \AND Thomas Dye\\University of Hawai`i \AND Carsten Dominik\\University of Amsterdam and Radboud University Nijmegen}
 #+LATEX_HEADER: \title{A Multi-Language Computing Environment for Literate Programming and Reproducible Research}
 #+LATEX_HEADER: \Shorttitle{Computational Environment for Mixed Prose and Code}
 #+LATEX_HEADER: \Keywords{emacs, lisp, org-mode, literate programming, reproducible research, compendium, web}
