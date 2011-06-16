@@ -1,5 +1,5 @@
 ;; Require ESS to allow evaluation of R code blocks
-(let ((ess-path "~/.emacs.d/src/ess/lisp/")) ;; <- adjust for your system
+(let ((ess-path "~/ess/lisp/")) ;; <- adjust for your system
   (add-to-list 'load-path ess-path)
   (require 'ess-site))
 
