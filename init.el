@@ -1,7 +1,10 @@
 ;; Require ESS to allow evaluation of R code blocks
-(let ((ess-path "~/ess/lisp/")) ;; <- adjust for your system
+(let ((ess-path "~/.emacs.d/src/ess/lisp/")) ;; <- adjust for your system
   (add-to-list 'load-path ess-path)
   (require 'ess-site))
+
+;; this line only required until the upcomming Org-mode/Emacs24 sync
+(load "~/.emacs.d/src/org/lisp/org-exp-blocks.el")
 
 ;; Configure Babel to support all languages included in the manuscript
 (org-babel-do-load-languages

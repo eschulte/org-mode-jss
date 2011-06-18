@@ -29,7 +29,8 @@ referenced figures.
    the source code from http://ess.r-project.org/ -- this paper was
    tested with version 5.13.  Unpack the download into a directory on
    your machine, and update the `ess-path' variable on the second line
-   of init.el in this directory to point to the ess/lisp/ directory.
+   of init.el in this directory to point to your local ess/lisp/
+   directory. (temporarily edit line 7 of init.el for your system)
 
 5. From the command line, cd into this directory and then launch Emacs
    using the following command
