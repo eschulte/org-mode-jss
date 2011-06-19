@@ -735,17 +735,25 @@ handling of code results is available in the [[latex:proglang][Org-mode]] docume
 [[latex:proglang][Org-mode]] implements a simple system of passing arguments to code
 blocks.  The =:var= header argument takes a variable name and a value
 and assigns the value to the named variable inside the code block.
-Values can be literal values, such as scalars or strings, references
-to named data blocks, links, or references to named code blocks.
-In the latter case, the value is the result of evaluating the
-referenced code block.
+Values can be literal values, such as scalars or vectors of numbers or
+strings, references to named data blocks, links, or references to
+named code blocks.  In the latter case, the value is the result of
+evaluating the referenced code block.
 
 All values passed to variables are served by the [[latex:proglang][Emacs Lisp]]
-interpreter that is at the core of Emacs.  This argument passing
-syntax allows for complex chaining of raw values in a document, and
-the results of computations in one computer language can be used as
-input to blocks of code in another language, as shown in Section
-\ref{examples}.
+interpreter that is at the core of Emacs.  Such values whether read
+from literal inline data or tables, or the result of code block
+execution are translated into Emacs Lisp data structures.  These
+structures are composed of numbers or strings, and may be either
+scalars or matrices of arbitrary dimension (represented internally a
+lisp lists of arbitrarily deep nesting).  Each language supported by
+Org-mode provides language-specific methods of translating to and from
+these simple Emacs Lisp data structures.
+
+This argument passing syntax allows for complex chaining of the active
+elements of a document, and the results of computations in one
+computer language can be used as input to blocks of code in another
+language, as shown in Section \ref{examples}.
 
 ** Export
     :PROPERTIES:
