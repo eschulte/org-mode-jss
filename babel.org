@@ -674,7 +674,7 @@ same code yields a string.
   
   ,#+results:
   ,: shouting into the dark!  
-#+end_src org
+#+end_src
 
 #+begin_src perl :exports none
   $x = 8;
