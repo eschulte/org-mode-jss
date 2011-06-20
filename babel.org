@@ -568,10 +568,13 @@ by code blocks. These can be /tables/, /example blocks/, or /links/.
 #+end_src
 
 Active code blocks are marked with a =#+source:= line, followed by a
-name unique within the document.  Such blocks can be augmented by header
-arguments that control the way [[latex:proglang][Org-mode]] handles evaluation and export.
+name unique within the document.  Such blocks can be augmented by
+header arguments that control the way [[latex:proglang][Org-mode]] handles evaluation and
+export.  Any number of optional =#+headers:= lines may be used to
+split header arguments across multiple lines.
 #+begin_src org
   ,#+source: <name>
+  ,#+headers: <header arguments>
   ,#+begin_src <language> <header arguments>
   ,  <body>
   ,#+end_src
