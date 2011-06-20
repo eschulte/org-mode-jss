@@ -336,7 +336,8 @@ Format and Microsoft Word
 There are a number of tools supporting the composition of combined
 prose and code (Table \ref{tab:tools}).  These vary widely in
 complexity and supported use case from simple comment extraction
-engines, through LP and RR tools to full domain specific languages.
+engines, through LP and RR tools to integrated programming language
+extensions.
 
 #+label: tab:tools
 #+Attr_LaTeX: align=r|llllll
@@ -355,25 +356,28 @@ engines, through LP and RR tools to full domain specific languages.
 | literate haskell | yes     | no  | no       | Haskell       | yes    | no     |
 | Field            | no      | no  | yes      | JVM Languages | no     | no     |
 
-Some of the tools mentioned above merit specific mention.  By far the
-most commonly used tools are the simple comment extraction engines
-such as Perl's POD \cite{wall00:_progr_perl} and Java's =javadoc=
+By far the most commonly used tools mentioned in Table \ref{tab:tools}
+are the simple comment extraction engines such as Perl's POD
+\cite{wall00:_progr_perl} and Java's =javadoc=
 \cite{Kramer:1999:ADS:318372.318577}.  These tools are generally
 language-specific and are used for embedded API documentation, however
-they are not considered LP tools because of their lack for named code
-blocks and for code re-organization during tangling.
+they are not considered LP tools because of their lack of support for
+named code blocks and for code re-organization during tangling.  Most
+other existing tools fall into one of either the Literate Programming
+or Reproducible Research use cases mentioned above.
 
-The least common feature, labeled "Callable Blocks", indicates tools
-which allow embedded code blocks to /evaluate/ other code blocks
-taking their output as inputs.  Only three tools support this feature.
-Scribble \cite{DBLP:conf/icfp/FlattBF09} allows such block
-self-reference through implementation as an extension to the scheme
-programming language, using standard scheme data types as its
-interblock data transfer medium.  Field \cite{group:_field} an
-experimental IDE for graphical artists similarly allows for interblock
-data exchange by only supporting languages which run on the Java
-Virtual Machine (JVM).  Org-mode is the only tool which allows for
-passing values between blocks that is also truly language agnostic.
+The least common feature, labeled "Callable Blocks" Table
+\ref{tab:tools}, indicates tools which allow embedded code blocks to
+/evaluate/ other code blocks taking their output as inputs.  Only
+three tools support this feature.  Scribble
+\cite{DBLP:conf/icfp/FlattBF09} allows such block self-reference
+through implementation as an extension to the scheme programming
+language, using standard scheme data types as its interblock data
+transfer medium.  Field \cite{group:_field} an experimental IDE for
+graphical artists similarly allows for interblock data exchange by
+only supporting languages which run on the Java Virtual Machine (JVM).
+Org-mode is the only tool which allows for passing values between
+blocks that is also truly language agnostic.
 
 *** COMMENT links to specific examples
 Reviewer mentions
