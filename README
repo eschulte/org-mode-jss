@@ -15,12 +15,17 @@ referenced figures.
    - curl
    - dot
    - haskell
+     - the executable should be named "ghc"
+     - haskell-mode is also required
+       (see http://www.haskell.org/haskellwiki/Haskell_mode_for_Emacs)
    - perl
    - python
    - R
    - ruby
    - sh
    - sqlite
+     - the executable is should be named "sqlite3", if not then
+       customize the value of `org-babel-sqlite3-command'
 
 3. Install the "RSQlite" R library
 
