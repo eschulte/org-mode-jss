@@ -334,36 +334,26 @@ Format and Microsoft Word
 
 ** Existing Tools
 There are a number of tools supporting the composition of combined
-prose and code (see Table \ref{tab:tools}).  These vary widely in
+prose and code (Table \ref{tab:tools}).  These vary widely in
 complexity and supported use case from simple comment extraction
 engines, through LP and RR tools to full domain specific languages.
 
 #+label: tab:tools
-#+Attr_LaTeX: align=r|l|l|l|l|l|l
-#+Caption: Comparison of existing tools for the authoring of prose and code. A ``x'' indicates full support and a ``/'' indicates partial support.
-|                  |    |    | Callable |               | LaTeX  | HTML   |
-|                  | LP | RR | Blocks   | Language      | Export | Export |
-|------------------+----+----+----------+---------------+--------+--------|
-| Org-mode         | x  | x  | x        | any           | x      | x      |
-|------------------+----+----+----------+---------------+--------+--------|
-| Perl POD         | /  |    |          | Perl          |        | x      |
-|------------------+----+----+----------+---------------+--------+--------|
-| Javadoc          | /  |    |          | Java          |        | x      |
-|------------------+----+----+----------+---------------+--------+--------|
-| Sweave           |    | x  |          | R             | x      | x      |
-|------------------+----+----+----------+---------------+--------+--------|
-| scribble         | x  | x  | x        | scheme        | x      | x      |
-|------------------+----+----+----------+---------------+--------+--------|
-| noweb            | x  |    |          | any           | x      | x      |
-|------------------+----+----+----------+---------------+--------+--------|
-| cweb             | x  |    |          | C/C++         | x      | x      |
-|------------------+----+----+----------+---------------+--------+--------|
-| ocamlweb         | x  |    |          | OCaml         | x      | x      |
-|------------------+----+----+----------+---------------+--------+--------|
-| literate haskell | x  |    |          | Haskell       | x      |        |
-|------------------+----+----+----------+---------------+--------+--------|
-| Field            |    |    | x        | JVM Languages |        |        |
-|------------------+----+----+----------+---------------+--------+--------|
+#+Attr_LaTeX: align=r|llllll
+#+Caption: Comparison of existing tools
+|                  |         |     | Callable |               | LaTeX  | HTML   |
+| Tool             | LP      | RR  | Blocks   | Language      | Export | Export |
+|------------------+---------+-----+----------+---------------+--------+--------|
+| Org-mode         | yes     | yes | yes      | any           | yes    | yes    |
+| Perl POD         | partial |  no | no       | Perl          |  no    | yes    |
+| Javadoc          | partial | no  | no       | Java          | no     | yes    |
+| Sweave           | no      | yes | no       | R             | yes    | yes    |
+| scribble         | yes     | yes | yes      | scheme        | yes    | yes    |
+| noweb            | yes     | no  | no       | any           | yes    | yes    |
+| cweb             | yes     | no  | no       | C/C++         | yes    | yes    |
+| ocamlweb         | yes     | no  | no       | OCaml         | yes    | yes    |
+| literate haskell | yes     | no  | no       | Haskell       | yes    | no     |
+| Field            | no      | no  | yes      | JVM Languages | no     | no     |
 
 Some of the tools mentioned above merit specific mention.  By far the
 most commonly used tools are the simple comment extraction engines
