@@ -376,6 +376,9 @@ Virtual Machine (JVM).  Org-mode is the only tool which allows for
 passing values between blocks that is also truly language agnostic.
 
 *** COMMENT links to specific examples
+Reviewer mentions
+- SASweave, StatWeave, ODFweave, Sword, and cacheSweave
+
 Reproducible Research
 - [[http://en.wikipedia.org/wiki/Sweave][Sweave]]
 - the tools used in generating [[http://www.cis.upenn.edu/~bcpierce/tapl/][TAPL]]
@@ -1064,21 +1067,29 @@ direction of array traversal is alternated with each pass.  As a
 result Cocktail Sort is more efficient than Bubble Sort for arrays
 with small elements located at the end of the array.
 
-The following example produces a command line executable, =cocktail=,
-that will print its arguments in sorted order.  The =cocktail.c= code
-block uses standard literate programming syntax
+The following literate programming example demonstrates an
+implementation of cocktail sort logically divided among three code
+blocks.  The code blocks may be /tangled/ to produce a single source
+code file named =cocktail.c= which may then be compiled to generate a
+command line executable.
+
+The =cocktail.c= code block uses standard literate programming
+syntax.  During tangling code block references
 (i.e.,
 #+begin_LaTeX
   \verb=<<block-name>>=
 #+end_LaTeX
-) to combine the three parts of the
-program: the standard [[latex:proglang][C]] header for input/output; the implementation of
-the cocktail sort algorithm; and the command-line mechanism to accept
-input and return results.
+) are expanded to combine the three parts of the program: the standard
+[[latex:proglang][C]] header for input/output in block =cocktail.c=; the implementation of
+the cocktail sort algorithm in block =cocktail-sort=; and the
+command-line mechanism to accept input and return results in block
+=main=.  The =:noweb yes= header argument enables the expansion of
+noweb references and the =:tangle cocktail.c= header argument
+specifies the name of the target source code file.
 
 #+begin_src org :noweb tangle
   ,#+source: cocktail.c
-  ,#+begin_src C :noweb tangle :tangle cocktail.c
+  ,#+begin_src C :noweb yes :tangle cocktail.c
   ,  #include <stdio.h>
   ,  <<cocktail-sort>>
   ,  <<main>>
@@ -1086,7 +1097,7 @@ input and return results.
 #+end_src
 
 #+source: cocktail.c
-#+begin_src C :noweb tangle :tangle cocktail.c yes :exports none
+#+begin_src C :noweb yes :tangle cocktail.c yes :exports none
   #include <stdio.h>
   <<cocktail-sort>>
   <<main>>
@@ -1133,9 +1144,9 @@ The actual swapping of elements is handled by =swap=, which sets the
 the elements are already in sorted order.  This process continues
 until no more swaps have been made and the array is sorted.
 
-#+begin_src org
+#+begin_src org :noweb tangle
   ,#+source: cocktail-sort
-  ,#+begin_src C :noweb tangle
+  ,#+begin_src C :noweb yes
   ,  void sort(int *a, unsigned int l)
   ,  {
   ,    int swapped = 0;
@@ -1156,7 +1167,7 @@ until no more swaps have been made and the array is sorted.
 #+end_src
 
 #+source: cocktail-sort
-#+begin_src C :noweb tangle :exports none
+#+begin_src C :noweb yes :exports none
   void sort(int *a, unsigned int l)
   {
     int swapped = 0;
@@ -1206,9 +1217,9 @@ to the file =cocktail.c=, as indicated by the =:tangle= header
 argument of the =cocktail.c= code block.  Alternately the expanded
 code block can be compiled and evaluated from within the [[latex:proglang][Org-mode]] file
 using the following =#+call= line.  A =#+call:= line syntax can be
-used to call remote code blocks as functions specifying arguments and
+used to execute code blocks as functions specifying arguments and
 header arguments, the result of the remote code block is inserted
-locally.
+locally as shown.
 
 #+begin_src org
   ,#+call: cocktail.c[:cmdline 8 7 6 3 2 4 78]()
