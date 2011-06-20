@@ -340,43 +340,42 @@ engines, through LP and RR tools, to integrated programming language
 extensions.
 
 #+label: tab:tools
-#+Attr_LaTeX: align=r|llllll
+#+Attr_LaTeX: align=r|l|llllll
 #+Caption: Comparison of existing tools
-|                  | Literate | Reprod.  | Callable |               | LaTeX  | HTML   |
-| Tool             | Program  | Research | Blocks   | Language      | Export | Export |
-|------------------+----------+----------+----------+---------------+--------+--------|
-| [[latex:proglang][Org-mode]]         | yes      | yes      | yes      | any           | yes    | yes    |
-| [[latex:proglang][scribble]]         | yes      | yes      | yes      | [[latex:proglang][scheme]]        | yes    | yes    |
-| [[latex:proglang][noweb]]            | yes      | no       | no       | any           | yes    | yes    |
-| [[latex:proglang][cweb]]             | yes      | no       | no       | [[latex:proglang][C]]/[[latex:proglang][C++]]         | yes    | yes    |
-| [[latex:proglang][ocamlweb]]         | yes      | no       | no       | [[latex:proglang][OCaml]]         | yes    | yes    |
-| [[latex:proglang][Haskell]]          | yes      | no       | no       | [[latex:proglang][Haskell]]       | yes    | no     |
-| [[latex:proglang][POD]]              | partial  | no       | no       | [[latex:proglang][Perl]]          | no     | yes    |
-| [[latex:proglang][Javadoc]]          | partial  | no       | no       | [[latex:proglang][Java]]          | no     | yes    |
-| [[latex:proglang][Sweave]]           | no       | yes      | no       | [[latex:proglang][R]]             | yes    | yes    |
-| [[latex:proglang][Field]]            | no       | no       | yes      | JVM languages | no     | no     |
+|                |                                          |         |     | Callable |          | LaTeX  | HTML   |
+| Tool           | Reference                                | LP      | RR  | Blocks   | Language | Export | Export |
+|----------------+------------------------------------------+---------+-----+----------+----------+--------+--------|
+| [[latex:proglang][Javadoc]]        | \citep{Kramer:1999:ADS:318372.318577}    | partial | no  | no       | [[latex:proglang][Java]]     | no     | yes    |
+| [[latex:proglang][POD]]            | \citep{wall00:_progr_perl}               | partial | no  | no       | [[latex:proglang][Perl]]     | no     | yes    |
+| [[latex:proglang][Haskell]] =.lhs= | \citep{jones03:_haskel_languag_librar}   | partial | no  | no       | [[latex:proglang][Haskell]]  | yes    | yes    |
+| [[latex:proglang][Sweave]]         | \citep{sweave}                           | partial | yes | no       | [[latex:proglang][R]]        | yes    | yes    |
+| [[latex:proglang][SASweave]]       | \citep{Lenth:2007:SLP}                   | partial | yes | no       | [[latex:proglang][R]]/[[latex:proglang][SAS]]    | yes    | yes    |
+| [[latex:proglang][Scribble]]       | \citep{DBLP:conf/icfp/FlattBF09}         | yes     | yes | yes      | [[latex:proglang][scheme]]   | yes    | yes    |
+| [[latex:proglang][noweb]]          | \citep{noweb}                            | yes     | no  | no       | any      | yes    | yes    |
+| [[latex:proglang][cweb]]           | \citep{knuth94:_cweb_system_struc_docum} | yes     | no  | no       | [[latex:proglang][C]]/[[latex:proglang][C++]]    | yes    | yes    |
+| [[latex:proglang][Field]]          | \citep{group:_field}                     | no      | no  | yes      | JVM      | no     | no     |
+| [[latex:proglang][Org-mode]]       |                                          | yes     | yes | yes      | any      | yes    | yes    |
 
 Perhaps the most commonly used tools are the comment extraction
-engines such as [[latex:proglang][POD]] \citep{wall00:_progr_perl} and [[latex:proglang][Javadoc]]
-\citep{Kramer:1999:ADS:318372.318577}.  These tools are generally
+engines such as [[latex:proglang][POD]] and [[latex:proglang][Javadoc]].  These tools are generally
 language-specific and are used for embedded API documentation, however
 they are not considered literate programming tools because they don't
-support named code blocks or code re-organization during tangling.
-Most other existing tools fall into one of either the literate
-programming or reproducible research use cases mentioned above.
+support named code blocks or code re-organization during
+tangling---for the same reason Sweave and SASweave are labeled as
+providing "partial" LP functionality.  Most other existing tools fall
+into one of either the literate programming or reproducible research
+use cases mentioned above.
 
 The least common feature, labeled "Callable Blocks" in Table
 \ref{tab:tools}, indicates tools that allow embedded code blocks to
 /evaluate/ other code blocks taking their output as inputs.  Only
-three tools support this feature.  [[latex:proglang][Scribble]]
-\citep{DBLP:conf/icfp/FlattBF09} allows block self-reference
-through implementation as an extension to [[latex:proglang][scheme]], using standard
-[[latex:proglang][scheme]] data types for interblock data transfer.  [[latex:proglang][Field]]
-\citep{group:_field}, an experimental integrated development
-environment for graphical artists, supports interblock data exchange
-for languages that run on the Java Virtual Machine (JVM).  [[latex:proglang][Org-mode]] is
-the only language agnostic tool that allows values to be passed
-between blocks.
+three tools support this feature.  [[latex:proglang][Scribble]] allows block
+self-reference through implementation as an extension to [[latex:proglang][scheme]], using
+standard [[latex:proglang][scheme]] data types for interblock data transfer.  [[latex:proglang][Field]], an
+experimental integrated development environment for graphical artists,
+supports interblock data exchange for languages that run on the Java
+Virtual Machine (JVM).  [[latex:proglang][Org-mode]] is the only language agnostic tool
+that allows values to be passed between blocks.
 
 *** COMMENT links to specific examples
 Reviewer mentions
@@ -1524,3 +1523,4 @@ http://www.gnu.org/software/emacs/calc.html.
 [fn:4] http://orgmode.org/manual/Working-With-Source-Code.html.
 
 [fn:5] https://github.com/eschulte/org-mode-jss/blob/master/babel.org
+
