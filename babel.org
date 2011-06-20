@@ -333,51 +333,50 @@ Format and Microsoft Word
 \citep{Lenth:2007:SLP,baier07:_excel,kuhn10:_odfweav_packag,lenth09:_statw_users_manual}.
 
 ** Existing Tools
-There are a number of tools supporting the composition of combined
-prose and code (Table \ref{tab:tools}).  These vary widely in
-complexity and supported use case from simple comment extraction
-engines, through LP and RR tools to integrated programming language
+There are a number of other software tools that support composition of
+combined prose and code (Table \ref{tab:tools}).  These tools vary
+widely in complexity and design, ranging from simple comment extraction
+engines, through LP and RR tools, to integrated programming language
 extensions.
 
 #+label: tab:tools
 #+Attr_LaTeX: align=r|llllll
 #+Caption: Comparison of existing tools
-|                  |         |     | Callable |               | LaTeX  | HTML   |
-| Tool             | LP      | RR  | Blocks   | Language      | Export | Export |
-|------------------+---------+-----+----------+---------------+--------+--------|
-| Org-mode         | yes     | yes | yes      | any           | yes    | yes    |
-| Perl POD         | partial |  no | no       | Perl          |  no    | yes    |
-| Javadoc          | partial | no  | no       | Java          | no     | yes    |
-| Sweave           | no      | yes | no       | R             | yes    | yes    |
-| scribble         | yes     | yes | yes      | scheme        | yes    | yes    |
-| noweb            | yes     | no  | no       | any           | yes    | yes    |
-| cweb             | yes     | no  | no       | C/C++         | yes    | yes    |
-| ocamlweb         | yes     | no  | no       | OCaml         | yes    | yes    |
-| literate haskell | yes     | no  | no       | Haskell       | yes    | no     |
-| Field            | no      | no  | yes      | JVM Languages | no     | no     |
+|                  | Literate | Reprod.  | Callable |               | LaTeX  | HTML   |
+| Tool             | Program  | Research | Blocks   | Language      | Export | Export |
+|------------------+----------+----------+----------+---------------+--------+--------|
+| [[latex:proglang][Org-mode]]         | yes      | yes      | yes      | any           | yes    | yes    |
+| [[latex:proglang][scribble]]         | yes      | yes      | yes      | [[latex:proglang][scheme]]        | yes    | yes    |
+| [[latex:proglang][noweb]]            | yes      | no       | no       | any           | yes    | yes    |
+| [[latex:proglang][cweb]]             | yes      | no       | no       | [[latex:proglang][C]]/[[latex:proglang][C++]]         | yes    | yes    |
+| [[latex:proglang][ocamlweb]]         | yes      | no       | no       | [[latex:proglang][OCaml]]         | yes    | yes    |
+| [[latex:proglang][Haskell]]          | yes      | no       | no       | [[latex:proglang][Haskell]]       | yes    | no     |
+| [[latex:proglang][POD]]              | partial  | no       | no       | [[latex:proglang][Perl]]          | no     | yes    |
+| [[latex:proglang][Javadoc]]          | partial  | no       | no       | [[latex:proglang][Java]]          | no     | yes    |
+| [[latex:proglang][Sweave]]           | no       | yes      | no       | [[latex:proglang][R]]             | yes    | yes    |
+| [[latex:proglang][Field]]            | no       | no       | yes      | JVM languages | no     | no     |
 
-By far the most commonly used tools mentioned in Table \ref{tab:tools}
-are the simple comment extraction engines such as Perl's POD
-\cite{wall00:_progr_perl} and Java's =javadoc=
-\cite{Kramer:1999:ADS:318372.318577}.  These tools are generally
+Perhaps the most commonly used tools are the comment extraction
+engines such as [[latex:proglang][POD]] \citep{wall00:_progr_perl} and [[latex:proglang][Javadoc]]
+\citep{Kramer:1999:ADS:318372.318577}.  These tools are generally
 language-specific and are used for embedded API documentation, however
-they are not considered LP tools because of their lack of support for
-named code blocks and for code re-organization during tangling.  Most
-other existing tools fall into one of either the Literate Programming
-or Reproducible Research use cases mentioned above.
+they are not considered literate programming tools because they don't
+support named code blocks or code re-organization during tangling.
+Most other existing tools fall into one of either the literate
+programming or reproducible research use cases mentioned above.
 
-The least common feature, labeled "Callable Blocks" Table
-\ref{tab:tools}, indicates tools which allow embedded code blocks to
+The least common feature, labeled "Callable Blocks" in Table
+\ref{tab:tools}, indicates tools that allow embedded code blocks to
 /evaluate/ other code blocks taking their output as inputs.  Only
-three tools support this feature.  Scribble
-\cite{DBLP:conf/icfp/FlattBF09} allows such block self-reference
-through implementation as an extension to the scheme programming
-language, using standard scheme data types as its interblock data
-transfer medium.  Field \cite{group:_field} an experimental IDE for
-graphical artists similarly allows for interblock data exchange by
-only supporting languages which run on the Java Virtual Machine (JVM).
-Org-mode is the only tool which allows for passing values between
-blocks that is also truly language agnostic.
+three tools support this feature.  [[latex:proglang][Scribble]]
+\citep{DBLP:conf/icfp/FlattBF09} allows block self-reference
+through implementation as an extension to [[latex:proglang][scheme]], using standard
+[[latex:proglang][scheme]] data types for interblock data transfer.  [[latex:proglang][Field]]
+\citep{group:_field}, an experimental integrated development
+environment for graphical artists, supports interblock data exchange
+for languages that run on the Java Virtual Machine (JVM).  [[latex:proglang][Org-mode]] is
+the only language agnostic tool that allows values to be passed
+between blocks.
 
 *** COMMENT links to specific examples
 Reviewer mentions
