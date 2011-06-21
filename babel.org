@@ -358,13 +358,13 @@ extensions.
 
 Perhaps the most commonly used tools are the comment extraction
 engines such as [[latex:proglang][POD]] and [[latex:proglang][Javadoc]].  These tools are generally
-language-specific and are used for embedded API documentation, however
-they are not considered literate programming tools because they don't
-support named code blocks or code re-organization during
-tangling---for the same reason [[latex:proglang][Sweave]] and [[latex:proglang][SASweave]] are labeled as
-providing "partial" LP functionality.  Most other existing tools fall
-into one of either the literate programming or reproducible research
-use cases mentioned above.
+language-specific and are used for embedded API
+documentation. However, they are not considered literate programming
+tools because they don't support named code blocks or code
+re-organization during tangling.  [[latex:proglang][Sweave]] and [[latex:proglang][SASweave]] are labeled as
+providing "partial" LP functionality for the same reason.  Most other
+existing tools fall into one of either the literate programming or
+reproducible research use cases mentioned above.
 
 ERIC, you should mention [[latex:proglang][Haskell]], [[latex:proglang][noweb]], and [[latex:proglang][cweb]] explicitly
 somewhere in the text.
