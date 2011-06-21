@@ -333,14 +333,13 @@ Format and Microsoft Word
 \citep{Lenth:2007:SLP,baier07:_excel,kuhn10:_odfweav_packag,lenth09:_statw_users_manual}.
 
 ** Existing Tools
-There are a number of other software tools that support composition of
-combined prose and code (Table \ref{tab:tools}).  These tools vary
-widely in complexity and design, ranging from simple comment extraction
-engines, through LP and RR tools, to integrated programming language
-extensions.
+A number of software tools support composition of combined prose and
+code (Table \ref{tab:tools}).  These tools vary widely in complexity
+and design, ranging from simple comment extraction engines, through LP
+and RR tools, to integrated programming language extensions.
 
 #+label: tab:tools
-#+Attr_LaTeX: align=r|l|llllll
+#+Attr_LaTeX: align=r|l|llllll position=[t!]
 #+Caption: Comparison of existing tools
 |                |                                          |         |     | Callable |          | LaTeX  | HTML   |
 | Tool           | Reference                                | LP      | RR  | Blocks   | Language | Export | Export |
@@ -356,29 +355,36 @@ extensions.
 | [[latex:proglang][Field]]          | \citet{group:_field}                     | no      | no  | yes      | JVM      | no     | no     |
 | [[latex:proglang][Org-mode]]       |                                          | yes     | yes | yes      | any      | yes    | yes    |
 
-Perhaps the most commonly used tools are the comment extraction
-engines such as [[latex:proglang][POD]] and [[latex:proglang][Javadoc]].  These tools are generally
-language-specific and are used for embedded API
-documentation. However, they are not considered literate programming
-tools because they don't support named code blocks or code
-re-organization during tangling.  [[latex:proglang][Sweave]] and [[latex:proglang][SASweave]] are labeled as
-providing "partial" LP functionality for the same reason.  Most other
-existing tools fall into one of either the literate programming or
-reproducible research use cases mentioned above.
+The most commonly used tools are simple comment extraction engines
+such as [[latex:proglang][POD]] and [[latex:proglang][Javadoc]].  These tools are generally language-specific
+and are used for embedded API documentation. However, they are not
+considered literate programming tools because they don't support named
+code blocks or code re-organization.
 
-ERIC, you should mention [[latex:proglang][Haskell]], [[latex:proglang][noweb]], and [[latex:proglang][cweb]] explicitly
-somewhere in the text.
+Haskell =.lhs= files extend these simple extraction engines by
+embedding code into a narrative document structure in which prose is
+primary.  Because of a lack for code re-organization during tangling
+=.lhs= files do not qualify as supporting full LP.  Most LP tools such
+as [[latex:proglang][noweb]], and [[latex:proglang][cweb]] are members of the web family descendant from
+Knuth's original web system.
+
+The most widely used reproducible research tool is Sweave.  Very few
+tools provide both RR and LP functionality.  No web-type tools provide
+RR functionality, and most RR tools such as [[latex:proglang][Sweave]] and [[latex:proglang][SASweave]]
+implement only partial LP functionality due to a lack of support for
+code block re-organization during tangling.
 
 The least common feature, labeled "Callable Blocks" in Table
 \ref{tab:tools}, indicates tools that allow embedded code blocks to
-/evaluate/ other code blocks taking their output as inputs.  Only
-three tools support this feature.  [[latex:proglang][Scribble]] allows block
-self-reference through implementation as an extension to [[latex:proglang][scheme]], using
-standard [[latex:proglang][scheme]] data types for interblock data transfer.  [[latex:proglang][Field]], an
-experimental integrated development environment for graphical artists,
-supports interblock data exchange for languages that run on the Java
-Virtual Machine (JVM).  [[latex:proglang][Org-mode]] is the only language agnostic tool
-that allows values to be passed between blocks.
+/evaluate/ other code blocks passing data between them.  Only three
+tools support this feature.  [[latex:proglang][Scribble]] which is implemented as an
+extension to the [[latex:proglang][scheme]] programming language, uses standard [[latex:proglang][scheme]]
+data types for interblock data transfer.  [[latex:proglang][Field]], an experimental
+integrated development environment for graphical artists, supports
+interblock data exchange for languages that run on the Java Virtual
+Machine (JVM).  [[latex:proglang][Org-mode]] is the only language agnostic tool that
+supports both LP and RR practices and allows values to be passed
+between code blocks.
 
 *** COMMENT links to specific examples
 Reviewer mentions
