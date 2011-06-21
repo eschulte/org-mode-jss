@@ -345,15 +345,15 @@ extensions.
 |                |                                          |         |     | Callable |          | LaTeX  | HTML   |
 | Tool           | Reference                                | LP      | RR  | Blocks   | Language | Export | Export |
 |----------------+------------------------------------------+---------+-----+----------+----------+--------+--------|
-| [[latex:proglang][Javadoc]]        | \citep{Kramer:1999:ADS:318372.318577}    | partial | no  | no       | [[latex:proglang][Java]]     | no     | yes    |
-| [[latex:proglang][POD]]            | \citep{wall00:_progr_perl}               | partial | no  | no       | [[latex:proglang][Perl]]     | no     | yes    |
-| [[latex:proglang][Haskell]] =.lhs= | \citep{jones03:_haskel_languag_librar}   | partial | no  | no       | [[latex:proglang][Haskell]]  | yes    | yes    |
-| [[latex:proglang][Sweave]]         | \citep{sweave}                           | partial | yes | no       | [[latex:proglang][R]]        | yes    | yes    |
-| [[latex:proglang][SASweave]]       | \citep{Lenth:2007:SLP}                   | partial | yes | no       | [[latex:proglang][R]]/[[latex:proglang][SAS]]    | yes    | yes    |
-| [[latex:proglang][Scribble]]       | \citep{DBLP:conf/icfp/FlattBF09}         | yes     | yes | yes      | [[latex:proglang][scheme]]   | yes    | yes    |
-| [[latex:proglang][noweb]]          | \citep{noweb}                            | yes     | no  | no       | any      | yes    | yes    |
-| [[latex:proglang][cweb]]           | \citep{knuth94:_cweb_system_struc_docum} | yes     | no  | no       | [[latex:proglang][C]]/[[latex:proglang][C++]]    | yes    | yes    |
-| [[latex:proglang][Field]]          | \citep{group:_field}                     | no      | no  | yes      | JVM      | no     | no     |
+| [[latex:proglang][Javadoc]]        | \citet{Kramer:1999:ADS:318372.318577}    | partial | no  | no       | [[latex:proglang][Java]]     | no     | yes    |
+| [[latex:proglang][POD]]            | \citet{wall00:_progr_perl}               | partial | no  | no       | [[latex:proglang][Perl]]     | no     | yes    |
+| [[latex:proglang][Haskell]] =.lhs= | \citet{jones03:_haskel_languag_librar}   | partial | no  | no       | [[latex:proglang][Haskell]]  | yes    | yes    |
+| [[latex:proglang][Sweave]]         | \citet{sweave}                           | partial | yes | no       | [[latex:proglang][R]]        | yes    | yes    |
+| [[latex:proglang][SASweave]]       | \citet{Lenth:2007:SLP}                   | partial | yes | no       | [[latex:proglang][R]]/[[latex:proglang][SAS]]    | yes    | yes    |
+| [[latex:proglang][Scribble]]       | \citet{DBLP:conf/icfp/FlattBF09}         | yes     | yes | yes      | [[latex:proglang][scheme]]   | yes    | yes    |
+| [[latex:proglang][noweb]]          | \citet{noweb}                            | yes     | no  | no       | any      | yes    | yes    |
+| [[latex:proglang][cweb]]           | \citet{knuth94:_cweb_system_struc_docum} | yes     | no  | no       | [[latex:proglang][C]]/[[latex:proglang][C++]]    | yes    | yes    |
+| [[latex:proglang][Field]]          | \citet{group:_field}                     | no      | no  | yes      | JVM      | no     | no     |
 | [[latex:proglang][Org-mode]]       |                                          | yes     | yes | yes      | any      | yes    | yes    |
 
 Perhaps the most commonly used tools are the comment extraction
@@ -361,10 +361,13 @@ engines such as [[latex:proglang][POD]] and [[latex:proglang][Javadoc]].  These 
 language-specific and are used for embedded API documentation, however
 they are not considered literate programming tools because they don't
 support named code blocks or code re-organization during
-tangling---for the same reason Sweave and SASweave are labeled as
+tangling---for the same reason [[latex:proglang][Sweave]] and [[latex:proglang][SASweave]] are labeled as
 providing "partial" LP functionality.  Most other existing tools fall
 into one of either the literate programming or reproducible research
 use cases mentioned above.
+
+ERIC, you should mention [[latex:proglang][Haskell]], [[latex:proglang][noweb]], and [[latex:proglang][cweb]] explicitly
+somewhere in the text.
 
 The least common feature, labeled "Callable Blocks" in Table
 \ref{tab:tools}, indicates tools that allow embedded code blocks to
