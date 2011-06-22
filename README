@@ -20,7 +20,7 @@ figures.
    - R
    - sh
    - sqlite
-     - the executable is should be named "sqlite3", if not then
+     - the executable should be named "sqlite3", if not then
        customize the value of `org-babel-sqlite3-command'
 
 3. Install the "RSQlite" R library
