@@ -11,7 +11,7 @@
 #+LATEX_HEADER: \Shorttitle{Computational Environment for Mixed Prose and Code}
 #+LATEX_HEADER: \Keywords{emacs, lisp, org-mode, literate programming, reproducible research, compendium, web}
 #+LATEX_HEADER: \Address{Eric Schulte\\Department of Computer Science\\University of New Mexico\\1 University of New Mexico\\Albuquerque, NM 87131\\United States of America\\E-mail: eschulte@cs.unm.edu\\URL: http://cs.unm.edu/$\sim$eschulte/}
-#+LATEX_HEADER: \Abstract{We present a new computing environment for authoring mixed natural and computer language documents. In this environment a single hierarchically-organized plain text source file may contain a variety of elements such as code in arbitrary programming languages, raw data, links to external resources, project management data, working notes, and text for publication. Code fragments may be executed in situ with graphical, numerical and text output captured or linked in the file. Export to \LaTeX{}, \proglang{HTML}, \LaTeX{}, \proglang{Beamer}, \proglang{DocBook} and other formats permits working reports, presentations and manuscripts for publication to be generated from the file. In addition, functioning pure code files can be automatically extracted from the file. This environment is implemented as an extension to the Emacs text editor and provides a rich set of features for authoring both prose and code, as well as sophisticated project management capabilities.}
+#+LATEX_HEADER: \Abstract{We present a new computing environment for authoring mixed natural and computer language documents. In this environment a single hierarchically-organized plain text source file may contain a variety of elements such as code in arbitrary programming languages, raw data, links to external resources, project management data, working notes, and text for publication. Code fragments may be executed in situ with graphical, numerical and text output captured or linked in the file. Export to \LaTeX{}, \proglang{HTML}, \LaTeX{} \proglang{Beamer}, \proglang{DocBook} and other formats permits working reports, presentations and manuscripts for publication to be generated from the file. In addition, functioning pure code files can be automatically extracted from the file. This environment is implemented as an extension to the Emacs text editor and provides a rich set of features for authoring both prose and code, as well as sophisticated project management capabilities.}
 #+LaTeX_CLASS: jss
 #+STARTUP: oddeven
 
@@ -339,21 +339,21 @@ and design, ranging from simple comment extraction engines, through LP
 and RR tools, to integrated programming language extensions.
 
 #+label: tab:tools
-#+Attr_LaTeX: align=r|l|llllll position=[t!]
+#+Attr_LaTeX: align=l|cccccll placement=[t!]\footnotesize
 #+Caption: Comparison of existing tools
-|                |                                          |         |     | Callable |          | LaTeX  | HTML   |
-| Tool           | Reference                                | LP      | RR  | Blocks   | Language | Export | Export |
-|----------------+------------------------------------------+---------+-----+----------+----------+--------+--------|
-| [[latex:proglang][Javadoc]]        | \citet{Kramer:1999:ADS:318372.318577}    | partial | no  | no       | [[latex:proglang][Java]]     | no     | yes    |
-| [[latex:proglang][POD]]            | \citet{wall00:_progr_perl}               | partial | no  | no       | [[latex:proglang][Perl]]     | no     | yes    |
-| [[latex:proglang][Haskell]] =.lhs= | \citet{jones03:_haskel_languag_librar}   | partial | no  | no       | [[latex:proglang][Haskell]]  | yes    | yes    |
-| [[latex:proglang][Sweave]]         | \citet{sweave}                           | partial | yes | no       | [[latex:proglang][R]]        | yes    | yes    |
-| [[latex:proglang][SASweave]]       | \citet{Lenth:2007:SLP}                   | partial | yes | no       | [[latex:proglang][R]]/[[latex:proglang][SAS]]    | yes    | yes    |
-| [[latex:proglang][Scribble]]       | \citet{DBLP:conf/icfp/FlattBF09}         | yes     | yes | yes      | [[latex:proglang][scheme]]   | yes    | yes    |
-| [[latex:proglang][noweb]]          | \citet{noweb}                            | yes     | no  | no       | any      | yes    | yes    |
-| [[latex:proglang][cweb]]           | \citet{knuth94:_cweb_system_struc_docum} | yes     | no  | no       | [[latex:proglang][C]]/[[latex:proglang][C++]]    | yes    | yes    |
-| [[latex:proglang][Field]]          | \citet{group:_field}                     | no      | no  | yes      | JVM      | no     | no     |
-| [[latex:proglang][Org-mode]]       |                                          | yes     | yes | yes      | any      | yes    | yes    |
+|                |         |     | Callable | LaTeX  | HTML   |          |                                          |
+| Tool           | LP      | RR  | Blocks   | Export | Export | Language | Reference                                |
+|----------------+---------+-----+----------+--------+--------+----------+------------------------------------------|
+| [[latex:proglang][Javadoc]]        | partial | no  | no       | no     | yes    | [[latex:proglang][Java]]     | \citet{Kramer:1999:ADS:318372.318577}    |
+| [[latex:proglang][POD]]            | partial | no  | no       | no     | yes    | [[latex:proglang][Perl]]     | \citet{wall00:_progr_perl}               |
+| [[latex:proglang][Haskell]] =.lhs= | partial | no  | no       | yes    | yes    | [[latex:proglang][Haskell]]  | \citet{jones03:_haskel_languag_librar}   |
+| [[latex:proglang][Sweave]]         | partial | yes | no       | yes    | yes    | [[latex:proglang][R]]        | \citet{sweave}                           |
+| [[latex:proglang][SASweave]]       | partial | yes | no       | yes    | yes    | [[latex:proglang][R]]/[[latex:proglang][SAS]]    | \citet{Lenth:2007:SLP}                   |
+| [[latex:proglang][Scribble]]       | yes     | yes | yes      | yes    | yes    | [[latex:proglang][scheme]]   | \citet{DBLP:conf/icfp/FlattBF09}         |
+| [[latex:proglang][noweb]]          | yes     | no  | no       | yes    | yes    | any      | \citet{noweb}                            |
+| [[latex:proglang][cweb]]           | yes     | no  | no       | yes    | yes    | [[latex:proglang][C]]/[[latex:proglang][C++]]    | \citet{knuth94:_cweb_system_struc_docum} |
+| [[latex:proglang][Field]]          | no      | no  | yes      | no     | no     | JVM      | \citet{group:_field}                     |
+| [[latex:proglang][Org-mode]]       | yes     | yes | yes      | yes    | yes    | any      |                                          |
 
 The most commonly used tools are simple comment extraction engines
 such as [[latex:proglang][POD]] and [[latex:proglang][Javadoc]].  These tools are generally language-specific
@@ -1511,8 +1511,8 @@ powerful tool to communicate their work and make it more accessible.
   :END:
 The authors gratefully acknowledge the [[latex:proglang][Org-mode]] community whose ideas
 and feedback both guided and motivated this work.  Additionally Eric
-Schulte would like to acknowledge Counsyl for helping
-to support this development.
+Schulte would like to acknowledge Counsyl for its support of this
+development.
 
 #+begin_LaTeX
   \bibliography{babel}
