@@ -381,8 +381,8 @@ lexical scoping of the underlying language to manage relations between
 prose and code.  [[latex:proglang][Org-mode]] is the first tool that supports both literate
 programming using traditional [[latex:proglang][WEB]]-style references and reproducible
 research.  Additionally, [[latex:proglang][Org-mode]] is the only reproducible research
-tool that supports source code blocks of multiple programming
-languages in a single executable document.
+tool that supports data flow between code blocks of arbitrary
+programming languages.
 
 *** COMMENT links to specific examples
 Reviewer mentions
