@@ -1099,7 +1099,7 @@ specifies the name of the target source code file.
 #+end_src
 
 #+source: cocktail.c
-#+begin_src C :noweb yes :tangle cocktail.c yes :exports none
+#+begin_src C :noweb yes :tangle cocktail.c :exports none
   #include <stdio.h>
   <<cocktail-sort>>
   <<main>>
