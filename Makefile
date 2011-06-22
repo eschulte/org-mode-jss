@@ -1,16 +1,11 @@
+CC=gcc
+EMACS=emacs
+BATCH_EMACS=$(EMACS) --batch -Q -l init.el babel.org
+
 all: babel.pdf
 
-EXP_BLOCKS=~/.emacs.d/src/org/lisp/org-exp-blocks.el
-CC=gcc
-
-.PHONY: pdf
-pdf: babel.pdf
-
 babel.tex: babel.org
-	emacs --batch -Q -l init.el -l $(EXP_BLOCKS) babel.org -f org-export-as-latex
-# The above line has a hackey site-specific fix loading code which has
-# not yet been added to Emacs.
-#	emacs --batch -Q -l init.el babel.org -f org-export-as-latex
+	$(BATCH_EMACS) -f org-export-as-latex
 
 babel.pdf: babel.tex
 	rm -f babel.aux 
@@ -32,7 +27,7 @@ babel.ps: babel.pdf
 	pdf2ps babel.pdf
 
 cocktail.c: babel.org
-	emacs --batch -Q -l init.el -l $(EXP_BLOCKS) babel.org -f org-babel-tangle
+	$(BATCH_EMACS) -f org-babel-tangle
 
 cocktail: cocktail.c
 	$(CC) -o cocktail cocktail.c
