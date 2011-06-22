@@ -18,7 +18,7 @@ babel.pdf: babel.tex
 		stat=$$?; touch babel.pdf; exit $$stat; \
 	fi
 	bibtex babel
-	while grep "Rerun to get cross" babel.log; do \
+	while grep "Rerun to get" babel.log; do \
 		if pdflatex babel.tex </dev/null; then \
 			true; \
 		else \

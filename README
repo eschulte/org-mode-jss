@@ -43,13 +43,15 @@ figures.
    
    : emacs -Q -l init.el babel.org
 
-6. The resulting Emacs window will be visiting the babel.org Org-mode
-   file.  From here it is possible to navigate the document within
-   Org-mode inspecting and interactively evaluating code examples.
-   Export the document to LaTeX with the M-x org-export-as-latex
+6. The resulting Emacs window will be visiting the Org-mode file,
+   babel.org.  From here it is possible to navigate and edit the
+   document, and to inspect and evaluate source code blocks.
+
+7. Export the document to LaTeX with the M-x org-export-as-latex
    command---just press RET in reply to queries from R.
 
-7. The resulting babel.tex file can be built normally using the
-   pdflatex command.  Alternatively once all requirements have been
-   included these last two steps can be performed by simply calling
-   make within this directory.
+8. The resulting babel.tex file can be built from the command line
+   with pdflatex and bibtex.
+
+9. Alternatively, steps 7 and 8 can be performed by calling make
+   from within the directory that holds babel.tex.
