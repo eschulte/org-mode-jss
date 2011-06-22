@@ -1,7 +1,8 @@
 ;; Require ESS to allow evaluation of R code blocks
 (let ((ess-path "~/.emacs.d/src/ess/lisp/")) ;; <- adjust for your system
   (add-to-list 'load-path ess-path)
-  (require 'ess-site))
+  (require 'ess-site)
+  (setq ess-ask-for-ess-directory nil))
 
 ;; this line only required until the upcomming Org-mode/Emacs24 sync
 (load "~/.emacs.d/src/org/lisp/org-exp-blocks.el")
