@@ -372,15 +372,15 @@ including Open Document Format and Microsoft Word
 [[latex:proglang][Sweave]] and its descendants don't support code block re-organization
 during tangling and thus only partially support literate programming.
 
-Only Scribble and Org-mode provide full support for both literate
+Only [[latex:proglang][Scribble]] and [[latex:proglang][Org-mode]] provide full support for both literate
 programming and reproducible research.  [[latex:proglang][Scribble]] is implemented as an
 extension to the [[latex:proglang][scheme]] programming language.  [[latex:proglang][Scribble]] makes use of
 lexical scoping of the underlying language to manage relations between
-prose and code.  [[latex:proglang][Org-mode]] is the only tool that supports both literate
-programming using traditional web-style references and reproducible
-research.  Additionally [[latex:proglang][Org-mode]] is the only reproducible research
-tool which support the use of multiple programming languages in a
-single executable document.
+prose and code.  [[latex:proglang][Org-mode]] is the first tool that supports both literate
+programming using traditional [[latex:proglang][WEB]]-style references and reproducible
+research.  Additionally, [[latex:proglang][Org-mode]] is the only reproducible research
+tool that supports source code blocks of multiple programming
+languages in a single executable document.
 
 *** COMMENT links to specific examples
 Reviewer mentions
