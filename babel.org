@@ -325,18 +325,25 @@ execute the embedded [[latex:proglang][R]] code and produce another LaTeX docume
 includes the resulting tables, graphical figures, and inline results.
 If the [[latex:proglang][Sweave]] document is accompanied by the data files and any other
 code that is used, then the reader can trace a result back to the
-relevant computations and through to the original data.  The [[latex:proglang][Sweave]]
-approach to reproducible research has spawned similar tools, some of
-which support statistical languages other then [[latex:proglang][R]], and which target
-document preparation systems other than LaTeX, including Open Document
-Format and Microsoft Word
-\citep{Lenth:2007:SLP,baier07:_excel,kuhn10:_odfweav_packag,lenth09:_statw_users_manual}.
+relevant computations and through to the original data.
 
 ** Existing Tools
-A number of software tools support composition of combined prose and
-code (Table \ref{tab:tools}).  These tools vary widely in complexity
-and design, ranging from simple comment extraction engines, through LP
-and RR tools, to integrated programming language extensions.
+Several software tools support composition of combined prose and code,
+but in a less comprehensive manner than [[latex:proglang][Org-mode]] (Table
+\ref{tab:tools}).  Perhaps the most commonly used among these tools
+are simple comment extraction engines such as [[latex:proglang][POD]] and [[latex:proglang][Javadoc]].  These,
+and other tools like them, are specific to a single language and are
+used for embedded API documentation. Their support for literate
+programming is partial because they don't recognize named code blocks
+or reorganize code.  Haskell =.lhs= files extend the functionality of
+these simple extraction engines by embedding code into a narrative
+document structure in which prose is primary.  The support for
+literate programming is partial, however, because code cannot be
+re-organized during tangling.  Tools with full literate programming
+functionality, such as [[latex:proglang][cweb]] and [[latex:proglang][noweb]], are direct descendants of
+Knuth's original [[latex:proglang][WEB]] system.  These tools don't support reproducible
+research. 
+
 
 #+label: tab:tools
 #+Attr_LaTeX: align=l|cccccll placement=[t!]\footnotesize
@@ -347,32 +354,24 @@ and RR tools, to integrated programming language extensions.
 | [[latex:proglang][Javadoc]]        | partial | no  | no       | no     | yes    | [[latex:proglang][Java]]     | \citet{Kramer:1999:ADS:318372.318577}    |
 | [[latex:proglang][POD]]            | partial | no  | no       | no     | yes    | [[latex:proglang][Perl]]     | \citet{wall00:_progr_perl}               |
 | [[latex:proglang][Haskell]] =.lhs= | partial | no  | no       | yes    | yes    | [[latex:proglang][Haskell]]  | \citet{jones03:_haskel_languag_librar}   |
+| [[latex:proglang][noweb]]          | yes     | no  | no       | yes    | yes    | any      | \citet{noweb}                            |
+| [[latex:proglang][cweb]]           | yes     | no  | no       | yes    | yes    | [[latex:proglang][C]]/[[latex:proglang][C++]]    | \citet{knuth94:_cweb_system_struc_docum} |
 | [[latex:proglang][Sweave]]         | partial | yes | no       | yes    | yes    | [[latex:proglang][R]]        | \citet{sweave}                           |
 | [[latex:proglang][SASweave]]       | partial | yes | no       | yes    | yes    | [[latex:proglang][R]]/[[latex:proglang][SAS]]    | \citet{Lenth:2007:SLP}                   |
 | [[latex:proglang][Scribble]]       | yes     | yes | yes      | yes    | yes    | [[latex:proglang][scheme]]   | \citet{DBLP:conf/icfp/FlattBF09}         |
-| [[latex:proglang][noweb]]          | yes     | no  | no       | yes    | yes    | any      | \citet{noweb}                            |
-| [[latex:proglang][cweb]]           | yes     | no  | no       | yes    | yes    | [[latex:proglang][C]]/[[latex:proglang][C++]]    | \citet{knuth94:_cweb_system_struc_docum} |
 | [[latex:proglang][Field]]          | no      | no  | yes      | no     | no     | JVM      | \citet{group:_field}                     |
 | [[latex:proglang][Org-mode]]       | yes     | yes | yes      | yes    | yes    | any      |                                          |
 
-The most commonly used tools are simple comment extraction engines
-such as [[latex:proglang][POD]] and [[latex:proglang][Javadoc]].  These tools are generally language-specific
-and are used for embedded API documentation. However, they are not
-considered literate programming tools because they don't support named
-code blocks or code re-organization.
 
-Haskell =.lhs= files extend these simple extraction engines by
-embedding code into a narrative document structure in which prose is
-primary.  Because of a lack for code re-organization during tangling
-=.lhs= files do not qualify as supporting full LP.  Most LP tools such
-as [[latex:proglang][noweb]], and [[latex:proglang][cweb]] are members of the web family descendant from
-Knuth's original web system.
-
-The most widely used reproducible research tool is Sweave.  Very few
-tools provide both RR and LP functionality.  No web-type tools provide
-RR functionality, and most RR tools such as [[latex:proglang][Sweave]] and [[latex:proglang][SASweave]]
-implement only partial LP functionality due to a lack of support for
-code block re-organization during tangling.
+Probably the most popular reproducible research tool is [[latex:proglang][Sweave]], which
+is used extensively by the [[latex:proglang][R]] programming community.  The [[latex:proglang][Sweave]]
+approach to reproducible research has spawned similar tools, such as
+[[latex:proglang][SASweave]], some of which support statistical languages other than [[latex:proglang][R]],
+and which target document preparation systems other than LaTeX,
+including Open Document Format and Microsoft Word
+\citep{Lenth:2007:SLP,baier07:_excel,kuhn10:_odfweav_packag,lenth09:_statw_users_manual}.
+[[latex:proglang][Sweave]] and its descendants don't support code block re-organization
+during tangling and thus only partially support literate programming.
 
 The least common feature, labeled "Callable Blocks" in Table
 \ref{tab:tools}, indicates tools that allow embedded code blocks to
