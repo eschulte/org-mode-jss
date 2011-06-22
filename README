@@ -33,20 +33,20 @@ figures.
    of init.el in this directory to point to your local ess/lisp/
    directory.
 
-5. From the command line, cd into the directory that holds babel.org
+5. Alternatively, follow steps 6 through 9 or call make from within
+   the directory that holds babel.org.
+
+6. From the command line, cd into the directory that holds babel.org
    and then launch Emacs using the following command
    
    : emacs -Q -l init.el babel.org
 
-6. The resulting Emacs window will be visiting the Org-mode file,
+7. The resulting Emacs window will be visiting the Org-mode file,
    babel.org.  From here it is possible to navigate and edit the
    document, and to inspect and evaluate source code blocks.
 
-7. Export the document to LaTeX with the M-x org-export-as-latex
+8. Export the document to LaTeX with the M-x org-export-as-latex
    command---just press RET in reply to queries from R.
 
-8. The resulting babel.tex file can be built from the command line
+9. The resulting babel.tex file can be built from the command line
    with pdflatex and bibtex.
-
-9. Alternatively, steps 5 through 8 can be performed by calling make
-   from within the directory that holds babel.org.
