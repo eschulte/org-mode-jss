@@ -1,11 +1,13 @@
 all: babel.pdf
 
+EXP_BLOCKS=~/.emacs.d/src/org/lisp/org-exp-blocks.el
+CC=gcc
+
 .PHONY: pdf
 pdf: babel.pdf
 
 babel.tex: babel.org
-	emacs --batch -Q -l init.el \
-	-l ~/.emacs.d/src/org/lisp/org-exp-blocks.el babel.org -f org-export-as-latex
+	emacs --batch -Q -l init.el -l $(EXP_BLOCKS) babel.org -f org-export-as-latex
 # The above line has a hackey site-specific fix loading code which has
 # not yet been added to Emacs.
 #	emacs --batch -Q -l init.el babel.org -f org-export-as-latex
@@ -29,8 +31,14 @@ babel.pdf: babel.tex
 babel.ps: babel.pdf
 	pdf2ps babel.pdf
 
+cocktail.c: babel.org
+	emacs --batch -Q -l init.el -l $(EXP_BLOCKS) babel.org -f org-babel-tangle
+
+cocktail: cocktail.c
+	$(CC) -o cocktail cocktail.c
+
 clean:
-	rm -f *.aux *.log babel.ps *.dvi *.blg *.bbl *.toc *.tex *~ *.out babel.pdf 
+	rm -f *.aux *.log babel.ps *.dvi *.blg *.bbl *.toc *.tex *~ *.out babel.pdf cocktail*
 
 real-clean: clean
 	rm -f country-codes.csv raw-temps.csv *.pdf *.sqlite
