@@ -331,9 +331,11 @@ relevant computations and through to the original data.
 Several software tools support composition of combined prose and code,
 but in a less comprehensive manner than [[latex:proglang][Org-mode]] (Table
 \ref{tab:tools}).  Simple comment extraction engines such as [[latex:proglang][POD]] and
-[[latex:proglang][Javadoc]] are by far the most widely used among these tools.  These,
-and other tools like them, are specific to a single language and are
-used for embedded API documentation. Their support for literate
+[[latex:proglang][Javadoc]] are by far the most widely used among these tools.  These, and
+other tools like them, are specific to a single language and are used
+for embedded API documentation exported as HTML --- unlike more
+sophisticated tools which generally support a number of documentation
+export formats. Their support for literate
 programming is partial because they don't recognize named code blocks
 or reorganize code.  Haskell =.lhs= files extend the functionality of
 these simple extraction engines by embedding code into a narrative
@@ -346,7 +348,7 @@ research.
 
 
 #+label: tab:tools
-#+Attr_LaTeX: align=l|cccccll placement=[t!]\footnotesize
+#+Attr_LaTeX: align=l|cccccl placement=[t!]\footnotesize
 #+Caption: Comparison of existing tools
 |                |         |     | LaTeX  | HTML   |          |                                          |
 | Tool           | LP      | RR  | Export | Export | Language | Reference                                |
