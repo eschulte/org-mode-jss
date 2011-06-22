@@ -9,9 +9,9 @@
 #+LATEX_HEADER: \author{Eric Schulte\\University of New Mexico \And Dan Davison\\University of Oxford and Counsyl \AND Thomas Dye\\University of Hawai`i \AND Carsten Dominik\\University of Amsterdam and Radboud University Nijmegen}
 #+LATEX_HEADER: \title{A Multi-Language Computing Environment for Literate Programming and Reproducible Research}
 #+LATEX_HEADER: \Shorttitle{Computational Environment for Mixed Prose and Code}
-#+LATEX_HEADER: \Keywords{emacs, lisp, org-mode, literate programming, reproducible research, compendium, web}
+#+LATEX_HEADER: \Keywords{literate programming, reproducible research, compendium, web, emacs}
 #+LATEX_HEADER: \Address{Eric Schulte\\Department of Computer Science\\University of New Mexico\\1 University of New Mexico\\Albuquerque, NM 87131\\United States of America\\E-mail: eschulte@cs.unm.edu\\URL: http://cs.unm.edu/$\sim$eschulte/}
-#+LATEX_HEADER: \Abstract{We present a new computing environment for authoring mixed natural and computer language documents. In this environment a single hierarchically-organized plain text source file may contain a variety of elements such as code in arbitrary programming languages, raw data, links to external resources, project management data, working notes, and text for publication. Code fragments may be executed in situ with graphical, numerical and text output captured or linked in the file. Export to \LaTeX{}, \proglang{HTML}, \LaTeX{} \proglang{Beamer}, \proglang{DocBook} and other formats permits working reports, presentations and manuscripts for publication to be generated from the file. In addition, functioning pure code files can be automatically extracted from the file. This environment is implemented as an extension to the Emacs text editor and provides a rich set of features for authoring both prose and code, as well as sophisticated project management capabilities.}
+#+LATEX_HEADER: \Abstract{We present a new computing environment for authoring mixed natural and computer language documents. In this environment a single hierarchically-organized plain text source file may contain a variety of elements such as code in arbitrary programming languages, raw data, links to external resources, project management data, working notes, and text for publication. Code fragments may be executed in situ with graphical, numerical and textual output captured or linked in the file. Export to \LaTeX{}, \proglang{HTML}, \LaTeX{} \proglang{Beamer}, \proglang{DocBook} and other formats permits working reports, presentations and manuscripts for publication to be generated from the file. In addition, functioning pure code files can be automatically extracted from the file. This environment is implemented as an extension to the Emacs text editor and provides a rich set of features for authoring both prose and code, as well as sophisticated project management capabilities.}
 #+LaTeX_CLASS: jss
 #+STARTUP: oddeven
 
@@ -374,7 +374,7 @@ during tangling and thus only partially support literate programming.
 
 Only [[latex:proglang][Scribble]] and [[latex:proglang][Org-mode]] provide full support for both literate
 programming and reproducible research.  [[latex:proglang][Scribble]] is implemented as an
-extension to the [[latex:proglang][scheme]] programming language.  [[latex:proglang][Scribble]] makes use of
+extension to the [[latex:proglang][scheme]] programming language.  [[latex:proglang][Scribble]] makes use of the
 lexical scoping of the underlying language to manage relations between
 prose and code.  [[latex:proglang][Org-mode]] is the first tool that supports both literate
 programming using traditional [[latex:proglang][WEB]]-style references and reproducible
@@ -592,7 +592,7 @@ split header arguments across multiple lines.
 When a code block is evaluated, the captured output appears by default
 in the [[latex:proglang][Org-mode]] buffer immediately following the code block, e.g.,
 #+begin_src org
-   ,#+begin_src ruby :exports none
+   ,#+begin_src ruby
    ,  require 'date'
    ,  "This was last evaluated on #{Date.today}"
    ,#+end_src
@@ -644,14 +644,14 @@ At the most basic level, results can be collected from code blocks by
 value or as output.  This behavior is controlled by the =:results=
 header argument.
 
-- Header =:results value= :: Specifies that the code block should be treated
+- =:results value= :: Specifies that the code block should be treated
      as a function, and the results should be equal to the value of
      the last expression in the block, like the return value of a
      function.  This is the default setting.
 
-- Header =:results output= :: Specifies that the results should be collected
-     from =STDOUT=, as they are written by the
-     application responsible for code execution.
+- =:results output= :: Specifies that the results should be collected
+     from =STDOUT=, as they are written by the application responsible
+     for code execution.
 
 These differences are demonstrated by the following [[latex:proglang][perl]] code, which
 yields different results depending on the value of the =:results=
@@ -821,7 +821,7 @@ the user.[fn:1]
 The official web site for [[latex:proglang][Org-mode]] is maintained by one of us (CD) at
 [[http://orgmode.org/]].  The site contains links to: the [[http://orgmode.org/index.html#sec-3_1][standard
 distribution]] distributed with Emacs, the [[http://orgmode.org/index.html#sec-3_2][development version]], and to
-[[http://orgmode.org/index.html#sec-3_3][alternative distributions]] packaged with a variety of operating systems.
+[[http://orgmode.org/index.html#sec-3_3][alternative distributions]] packaged for a variety of operating systems.
 Documentation is available as a book
 \citep{dominik10:_org_mode_refer_manual} and in a [[http://orgmode.org/index.html#sec-4_1][variety of formats]]
 on-line. There is an [[http://orgmode.org/guide/index.html][on-line compact guide]] that can be downloaded as a
@@ -1031,14 +1031,10 @@ correct.
   ,#+source: pst-check
   ,#+begin_src emacs-lisp :var row='(1 2 1) :var n=0 :exports code
   ,  (defun fib (n)
-  ,    (if (<= n 2)
-  ,        1
-  ,      (+ (fib (- n 1)) (fib (- n 2)))))
+  ,    (if (<= n 2) 1 (+ (fib (- n 1)) (fib (- n 2)))))
   , 
   ,  (let ((row (if (listp row) row (list row))))
-  ,    (if (= (fib n) (reduce #'+ row))
-  ,        "pass"
-  ,      "fail"))
+  ,    (if (= (fib n) (reduce #'+ row)) "pass" "fail"))
   ,#+end_src
   
   ,#+results: pascals-triangle
@@ -1061,14 +1057,10 @@ correct.
 #+source: pst-check
 #+begin_src emacs-lisp :var row='(1 2 1) :var n=0 :exports none
   (defun fib (n)
-    (if (<= n 2)
-        1
-      (+ (fib (- n 1)) (fib (- n 2)))))
+    (if (<= n 2) 1 (+ (fib (- n 1)) (fib (- n 2)))))
    
   (let ((row (if (listp row) row (list row))))
-    (if (= (fib n) (reduce #'+ row))
-        "pass"
-      "fail"))
+    (if (= (fib n) (reduce #'+ row)) "pass" "fail"))
 #+end_src
 
 ** Literate programming --- cocktail sort
@@ -1335,8 +1327,8 @@ rather than storing the data as plain text in the [[latex:proglang][Org-mode]] b
 #+end_src
 
 #+headers: :var raw-temps-file=raw-temps :var codes-file=country-codes
-#+headers: :exports (if (file-exists-p "climate.sqlite") "silent" "results")
-#+begin_src sqlite :db climate.sqlite :exports results :results silent
+#+headers: :exports (if (file-exists-p "climate.sqlite") "none" "results")
+#+begin_src sqlite :db climate.sqlite :results silent
   drop table if exists temps;
   create table temps (country,station,replicate,year,jan,feb,
          mar,apr,may,jun,jul,aug,sep,oct,nov,dec);
@@ -1507,8 +1499,8 @@ powerful tool to communicate their work and make it more accessible.
   :END:
 The authors gratefully acknowledge the [[latex:proglang][Org-mode]] community whose ideas
 and feedback both guided and motivated this work.  Additionally Eric
-Schulte would like to acknowledge Counsyl for its support of this
-development.
+Schulte and Dan Davison would like to acknowledge Counsyl for its
+support of this development.
 
 #+begin_LaTeX
   \bibliography{babel}
@@ -1527,5 +1519,5 @@ http://www.gnu.org/software/emacs/calc.html.
 
 [fn:4] http://orgmode.org/manual/Working-With-Source-Code.html.
 
-[fn:5] https://github.com/eschulte/org-mode-jss/blob/master/babel.org
+[fn:5] http://github.com/eschulte/org-mode-jss
 
