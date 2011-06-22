@@ -48,5 +48,5 @@ figures.
 8. The resulting babel.tex file can be built from the command line
    with pdflatex and bibtex.
 
-9. Alternatively, steps 7 and 8 can be performed by calling make
-   from within the directory that holds babel.tex.
+9. Alternatively, steps 5 through 8 can be performed by calling make
+   from within the directory that holds babel.org.
