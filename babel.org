@@ -384,28 +384,6 @@ research.  Additionally, [[latex:proglang][Org-mode]] is the only reproducible r
 tool that supports data flow between code blocks of arbitrary
 programming languages.
 
-*** COMMENT links to specific examples
-Reviewer mentions
-- SASweave, StatWeave, ODFweave, Sword, and cacheSweave
-
-Reproducible Research
-- [[http://en.wikipedia.org/wiki/Sweave][Sweave]]
-- the tools used in generating [[http://www.cis.upenn.edu/~bcpierce/tapl/][TAPL]]
-
-Literate Programming
-- [[http://www.cs.tufts.edu/~nr/noweb/][Noweb]]
-- [[http://www-cs-faculty.stanford.edu/~knuth/cweb.html][Cweb]]
-- [[http://www.lri.fr/~filliatr/ocamlweb/][OCamlWeb]]
-
-Comment Documentation Generation
-- [[http://java.sun.com/j2se/javadoc/][javadoc]]
-- [[http://rdoc.sourceforge.net/][rdoc]]
-- [[http://www.stack.nl/~dimitri/doxygen/][doxygen]] [Not sure if I've put this in correct cetegory]
-
-Meta Functional Programming
-- [[http://openendedgroup.com/field/][field]] looks to be able to move data between different programming
-  languages as long as they all run on the JVM
-
 * Design of Org-mode
   :PROPERTIES:
   :CUSTOM_ID: design
