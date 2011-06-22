@@ -330,8 +330,8 @@ relevant computations and through to the original data.
 ** Existing Tools
 Several software tools support composition of combined prose and code,
 but in a less comprehensive manner than [[latex:proglang][Org-mode]] (Table
-\ref{tab:tools}).  Perhaps the most commonly used among these tools
-are simple comment extraction engines such as [[latex:proglang][POD]] and [[latex:proglang][Javadoc]].  These,
+\ref{tab:tools}).  Simple comment extraction engines such as [[latex:proglang][POD]] and
+[[latex:proglang][Javadoc]] are by far the most widely used among these tools.  These,
 and other tools like them, are specific to a single language and are
 used for embedded API documentation. Their support for literate
 programming is partial because they don't recognize named code blocks
@@ -348,19 +348,18 @@ research.
 #+label: tab:tools
 #+Attr_LaTeX: align=l|cccccll placement=[t!]\footnotesize
 #+Caption: Comparison of existing tools
-|                |         |     | Callable | LaTeX  | HTML   |          |                                          |
-| Tool           | LP      | RR  | Blocks   | Export | Export | Language | Reference                                |
-|----------------+---------+-----+----------+--------+--------+----------+------------------------------------------|
-| [[latex:proglang][Javadoc]]        | partial | no  | no       | no     | yes    | [[latex:proglang][Java]]     | \citet{Kramer:1999:ADS:318372.318577}    |
-| [[latex:proglang][POD]]            | partial | no  | no       | no     | yes    | [[latex:proglang][Perl]]     | \citet{wall00:_progr_perl}               |
-| [[latex:proglang][Haskell]] =.lhs= | partial | no  | no       | yes    | yes    | [[latex:proglang][Haskell]]  | \citet{jones03:_haskel_languag_librar}   |
-| [[latex:proglang][noweb]]          | yes     | no  | no       | yes    | yes    | any      | \citet{noweb}                            |
-| [[latex:proglang][cweb]]           | yes     | no  | no       | yes    | yes    | [[latex:proglang][C]]/[[latex:proglang][C++]]    | \citet{knuth94:_cweb_system_struc_docum} |
-| [[latex:proglang][Sweave]]         | partial | yes | no       | yes    | yes    | [[latex:proglang][R]]        | \citet{sweave}                           |
-| [[latex:proglang][SASweave]]       | partial | yes | no       | yes    | yes    | [[latex:proglang][R]]/[[latex:proglang][SAS]]    | \citet{Lenth:2007:SLP}                   |
-| [[latex:proglang][Scribble]]       | yes     | yes | yes      | yes    | yes    | [[latex:proglang][scheme]]   | \citet{DBLP:conf/icfp/FlattBF09}         |
-| [[latex:proglang][Field]]          | no      | no  | yes      | no     | no     | JVM      | \citet{group:_field}                     |
-| [[latex:proglang][Org-mode]]       | yes     | yes | yes      | yes    | yes    | any      |                                          |
+|                |         |     | LaTeX  | HTML   |          |                                          |
+| Tool           | LP      | RR  | Export | Export | Language | Reference                                |
+|----------------+---------+-----+--------+--------+----------+------------------------------------------|
+| [[latex:proglang][Javadoc]]        | partial | no  | no     | yes    | [[latex:proglang][Java]]     | \citet{Kramer:1999:ADS:318372.318577}    |
+| [[latex:proglang][POD]]            | partial | no  | no     | yes    | [[latex:proglang][Perl]]     | \citet{wall00:_progr_perl}               |
+| [[latex:proglang][Haskell]] =.lhs= | partial | no  | yes    | yes    | [[latex:proglang][Haskell]]  | \citet{jones03:_haskel_languag_librar}   |
+| [[latex:proglang][noweb]]          | yes     | no  | yes    | yes    | any      | \citet{noweb}                            |
+| [[latex:proglang][cweb]]           | yes     | no  | yes    | yes    | [[latex:proglang][C]]/[[latex:proglang][C++]]    | \citet{knuth94:_cweb_system_struc_docum} |
+| [[latex:proglang][Sweave]]         | partial | yes | yes    | yes    | [[latex:proglang][R]]        | \citet{sweave}                           |
+| [[latex:proglang][SASweave]]       | partial | yes | yes    | yes    | [[latex:proglang][R]]/[[latex:proglang][SAS]]    | \citet{Lenth:2007:SLP}                   |
+| [[latex:proglang][Scribble]]       | yes     | yes | yes    | yes    | [[latex:proglang][scheme]]   | \citet{DBLP:conf/icfp/FlattBF09}         |
+| [[latex:proglang][Org-mode]]       | yes     | yes | yes    | yes    | any      |                                          |
 
 
 Probably the most popular reproducible research tool is [[latex:proglang][Sweave]], which
@@ -373,17 +372,15 @@ including Open Document Format and Microsoft Word
 [[latex:proglang][Sweave]] and its descendants don't support code block re-organization
 during tangling and thus only partially support literate programming.
 
-The least common feature, labeled "Callable Blocks" in Table
-\ref{tab:tools}, indicates tools that allow embedded code blocks to
-/evaluate/ other code blocks passing data between them.  Only three
-tools support this feature.  [[latex:proglang][Scribble]] which is implemented as an
-extension to the [[latex:proglang][scheme]] programming language, uses standard [[latex:proglang][scheme]]
-data types for interblock data transfer.  [[latex:proglang][Field]], an experimental
-integrated development environment for graphical artists, supports
-interblock data exchange for languages that run on the Java Virtual
-Machine (JVM).  [[latex:proglang][Org-mode]] is the only language agnostic tool that
-supports both LP and RR practices and allows values to be passed
-between code blocks.
+Only Scribble and Org-mode provide full support for both literate
+programming and reproducible research.  [[latex:proglang][Scribble]] is implemented as an
+extension to the [[latex:proglang][scheme]] programming language.  [[latex:proglang][Scribble]] makes use of
+lexical scoping of the underlying language to manage relations between
+prose and code.  [[latex:proglang][Org-mode]] is the only tool that supports both literate
+programming using traditional web-style references and reproducible
+research.  Additionally [[latex:proglang][Org-mode]] is the only reproducible research
+tool which support the use of multiple programming languages in a
+single executable document.
 
 *** COMMENT links to specific examples
 Reviewer mentions
