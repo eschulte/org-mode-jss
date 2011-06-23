@@ -248,7 +248,7 @@ scholarship.  The actual scholarship is the complete software
 development environment and complete set of instructions which
 generated the figures.
 
-\attrib{\citealt{donoho}}
+\attrib{\citealt{buckheit95:_wavel_reprod_resear}}
 #+end_quote
 
 A research project typically relies upon components such as:
