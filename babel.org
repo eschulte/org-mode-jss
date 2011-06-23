@@ -182,12 +182,12 @@ to a LaTeX file marked up according the journal's specification. The
 The combined authoring of prose and code has historically been
 approached from two different standpoints.
 
-- Literate Programming :: Enhances traditional software development by
+- Literate programming :: Enhances traditional software development by
      embedding code in explanatory essays and encourages treating the
      act of development as one of communication with future
      maintainers.
 
-- Reproducible Research :: Embeds executable code in research reports
+- Reproducible research :: Embeds executable code in research reports
      and publications, with the aim of allowing readers to re-run the
      analyses described.
 
@@ -333,7 +333,7 @@ but in a less comprehensive manner than [[latex:proglang][Org-mode]] (Table
 \ref{tab:tools}).  Simple comment extraction engines such as [[latex:proglang][POD]] and
 [[latex:proglang][Javadoc]] are by far the most widely used among these tools.  These, and
 other tools like them, are specific to a single language and are used
-for embedded API documentation exported as HTML --- unlike more
+for embedded API documentation exported as HTML---unlike more
 sophisticated tools which generally support a number of documentation
 export formats. Their support for literate
 programming is partial because they don't recognize named code blocks
@@ -412,10 +412,9 @@ number of [[latex:proglang][Emacs Lisp]] functions.
 In the remainder of this section, we first describe [[latex:proglang][Org-mode]] in more
 detail, focusing on those features that support literate programming
 and reproducible research (Section \ref{org-mode}).  We then describe
-the syntax of code and data blocks (Section \ref{syntax}), evaluation
-of code blocks (Section \ref{code-blocks}), weaving and tangling of
-[[latex:proglang][Org-mode]] documents (Section \ref{export}), and language support
-facilities (Section \ref{languages}).
+code blocks and their evaluation (Section \ref{code-blocks}), weaving
+and tangling of [[latex:proglang][Org-mode]] documents (Section \ref{export}), and
+language support facilities (Section \ref{languages}).
 
 ** Structure and content of Org-mode documents
    :PROPERTIES:
@@ -428,7 +427,7 @@ comes from its organizing function and the fact that extensions to
 Emacs are often implemented as /modes/---software modules that define
 the way a user can edit and interact with certain classes of
 documents.  [[latex:proglang][Org-mode]] documents are plain text files, usually with the
-file name extension /.org/; working in [[latex:proglang][Org-mode]] starts with
+file name extension /.org/.  Working in [[latex:proglang][Org-mode]] starts with
 conventional text editing and incrementally adds [[latex:proglang][Org-mode]]-specific
 features.  Because Emacs has been ported to a large number of operating systems
 [[latex:proglang][Org-mode]] can be run on a wide variety of devices and its plain text
@@ -724,18 +723,18 @@ named code blocks.  In the latter case, the value is the result of
 evaluating the referenced code block.
 
 All values passed to variables are served by the [[latex:proglang][Emacs Lisp]]
-interpreter that is at the core of Emacs.  Such values whether read
+interpreter that is at the core of Emacs.  Such values, whether read
 from literal inline data or tables, or the result of code block
-execution are translated into Emacs Lisp data structures.  These
+execution, are translated into [[latex:proglang][Emacs Lisp]] data structures.  These
 structures are composed of numbers or strings, and may be either
-scalars or matrices of arbitrary dimension (represented internally a
-lisp lists of arbitrarily deep nesting).  Each language supported by
-Org-mode provides language-specific methods of translating to and from
-these simple Emacs Lisp data structures.
+scalars or matrices of arbitrary dimension (represented internally by
+[[latex:proglang][Lisp]] lists of arbitrarily deep nesting).  Each language supported by
+[[latex:proglang][Org-mode]] provides language-specific methods of translating to and from
+these simple [[latex:proglang][Emacs Lisp]] data structures.
 
-This argument passing syntax allows for complex chaining of the active
-elements of a document, and the results of computations in one
-computer language can be used as input to blocks of code in another
+This argument passing syntax makes possible complex chaining of the
+active elements of a document.  The results of a computation in one
+computer language can be used as input to a block of code in another
 language, as shown in Section \ref{examples}.
 
 ** Export
@@ -743,7 +742,7 @@ language, as shown in Section \ref{examples}.
     :CUSTOM_ID: export
     :END:
 
-Borrowing terms from the Literate Programming literature, [[latex:proglang][Org-mode]]
+Borrowing terms from the literate programming literature, [[latex:proglang][Org-mode]]
 supports both /weaving/---the exportation of a mixed code/prose
 document to a format suitable for reading by a human---and
 /tangling/---the exportation of a mixed code/prose document to a pure
@@ -757,8 +756,8 @@ code file suitable for execution by a computer.
      both code and results, or neither can be included in the export.
 
 - Tangling :: Source code in an [[latex:proglang][Org-mode]] document can be re-arranged
-     on export.  Often, the order in which a computer needs to be
-     presented with code differs from the order in which the code may
+     on export.  Often, the order in which code needs to be
+     presented toa computer differs from the order in which the code may
      be best organized in a document.  Literate programming systems
      like [[latex:proglang][noweb]] solve this problem using code-block references that
      are expanded as part of the tangle process \citep{noweb}.
@@ -771,7 +770,7 @@ code file suitable for execution by a computer.
     :END:
 
 The core functions of [[latex:proglang][Org-mode]] related to source code are language
-agnostic.  The tangling, source code edit, and export features can be
+agnostic.  The tangling, source code editing, and export features can be
 used for any computer language, even those that are not specifically
 supported; only code evaluation and interaction with live sessions
 require language-specific functions.  Support for new languages can be
@@ -788,14 +787,14 @@ to the document reader's computer.  The primary defense in this
 instance is for the reader to recognize malicious code and to choose
 not to run it.  This can be a difficult task in a reproducible
 research document written in a single computer language, such as one
-written with Sweave, but the difficulty increases if the document is
+written with [[latex:proglang][Sweave]], but the difficulty increases if the document is
 written in several computer languages, one or more of which is not
 understood by the reader.
 
 [[latex:proglang][Org-mode]] has been designed with security measures to protect users
-from the accidental or uninformed execution of code.  By default
-/every/ execution of a code block requires explicit confirmation from
-the user.[fn:1]
+from accidental or uninformed execution of code.  By default /every/
+execution of a code block requires explicit confirmation from the
+user.[fn:1]
 
 ** Where to find information about Org-mode
 The official web site for [[latex:proglang][Org-mode]] is maintained by one of us (CD) at
@@ -826,7 +825,7 @@ from within [[latex:proglang][Org-mode]] documents for long-term persistence of
 potentially large amounts of data, and the use of session-based
 evaluation for short term persistence of smaller data sets.
 
-** Data flow --- Pascal's triangle
+** Data flow---Pascal's triangle
    :PROPERTIES:
    :custom_id: pascals-triangle
    :END:
@@ -959,7 +958,7 @@ chained code blocks.  In this example, the =:file= header argument
 causes the code block to save the image resulting from its evaluation
 into a file named =pascals-triangle.pdf=, and inserts a link to this
 image into the [[latex:proglang][Org-mode]] buffer.  This link will then expand to include
-the contents of the image upon export --- it is also possible to view
+the contents of the image upon export.  It is also possible to view
 linked images from within an [[latex:proglang][Org-mode]] buffer.  The link is shown both
 in [[latex:proglang][Org-mode]] syntax and in exported form (Figure
 \ref{pascals-triangle-fig}).
@@ -1043,10 +1042,10 @@ correct.
     (if (= (fib n) (reduce #'+ row)) "pass" "fail"))
 #+end_src
 
-** Literate programming --- cocktail sort
-Cocktail Sort[fn:2] is a variation of Bubble Sort in which the
+** Literate programming---cocktail sort
+Cocktail sort[fn:2] is a variation of bubble sort in which the
 direction of array traversal is alternated with each pass.  As a
-result Cocktail Sort is more efficient than Bubble Sort for arrays
+result cocktail sort is more efficient than bubble sort for arrays
 with small elements located at the end of the array.
 
 The following literate programming example demonstrates an
@@ -1066,7 +1065,7 @@ syntax.  During tangling code block references
 the cocktail sort algorithm in block =cocktail-sort=; and the
 command-line mechanism to accept input and return results in block
 =main=.  The =:noweb yes= header argument enables the expansion of
-noweb references and the =:tangle cocktail.c= header argument
+[[latex:proglang][noweb]] references and the =:tangle cocktail.c= header argument
 specifies the name of the target source code file.
 
 #+begin_src org :noweb tangle
@@ -1119,7 +1118,7 @@ print the results.
   }
 #+end_src
 
-In the implementation of Cocktail Sort the array is repeatedly
+In the implementation of cocktail sort the array is repeatedly
 traversed in alternating directions, swapping out-of-order elements.
 The actual swapping of elements is handled by =swap=, which sets the
 =swapped= flag when it swaps elements, but leaves the flag alone if
@@ -1198,10 +1197,10 @@ In usual literate programming practice these parts can be tangled out
 to the file =cocktail.c=, as indicated by the =:tangle= header
 argument of the =cocktail.c= code block.  Alternately the expanded
 code block can be compiled and evaluated from within the [[latex:proglang][Org-mode]] file
-using the following =#+call= line.  A =#+call:= line syntax can be
-used to execute code blocks as functions specifying arguments and
-header arguments, the result of the remote code block is inserted
-locally as shown.
+using the following =#+call= line.  The =#+call:= line syntax can be
+used to execute code blocks as functions, specifying arguments and
+header arguments.  The result of executing the remote code block is
+inserted locally, as shown.
 
 #+begin_src org
   ,#+call: cocktail.c[:cmdline 8 7 6 3 2 4 78]()
@@ -1218,7 +1217,7 @@ locally as shown.
 
 #+call: cocktail.c[:cmdline 8 7 6 3 2 4 78]() :exports none
 
-** Reproducible research --- live climate data
+** Reproducible research---live climate data
 By referencing external data, a work of Reproducible Research can
 remain up-to-date long after its initial composition and publication.
 This example demonstrates the ability of code blocks in an [[latex:proglang][Org-mode]]
@@ -1428,8 +1427,8 @@ for a community of researchers and developers.  These include:
 - Widely available :: Software used in reproducible research should be
      readily available and easily installed by readers.  [[latex:proglang][Org-mode]] is
      freely available and, as of the next major release of Emacs
-     (version 24), [[latex:proglang][Org-mode]] including all of the facilities discussed
-     herein will be included in the Emacs core.  Emacs is one of the
+     (version 24), [[latex:proglang][Org-mode,]] including all of the facilities discussed
+     herein, will be included in the Emacs core.  Emacs is one of the
      most widely ported software applications, making possible the
      installation and use of [[latex:proglang][Org-mode]] on a wide variety of user
      systems.
