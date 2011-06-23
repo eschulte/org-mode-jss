@@ -353,7 +353,7 @@ research.
 |                |         |     | LaTeX  | HTML   |          |                                          |
 | Tool           | LP      | RR  | Export | Export | Language | Reference                                |
 |----------------+---------+-----+--------+--------+----------+------------------------------------------|
-| [[latex:proglang][Javadoc]]        | partial | no  | no     | yes    | [[latex:proglang][Java]]     | \citet{Kramer:1999:ADS:318372.318577}    |
+| [[latex:proglang][Javadoc]]        | partial | no  | no     | yes    | [[latex:proglang][Java]]     | \citet{oracle03:_java_api_docum_gener}   |
 | [[latex:proglang][POD]]            | partial | no  | no     | yes    | [[latex:proglang][Perl]]     | \citet{wall00:_progr_perl}               |
 | [[latex:proglang][Haskell]] =.lhs= | partial | no  | yes    | yes    | [[latex:proglang][Haskell]]  | \citet{jones03:_haskel_languag_librar}   |
 | [[latex:proglang][noweb]]          | yes     | no  | yes    | yes    | any      | \citet{noweb}                            |
