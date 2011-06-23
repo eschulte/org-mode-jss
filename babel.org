@@ -28,7 +28,7 @@ code, data, and computational results in a single document.
   documentation, the usability and future extensibility of
   computational tools are compromised.
 - In /pedagogical/ environments it is important for descriptions of
-  algorithms or techniques to go hand-in-hand with 
+  algorithms or techniques to go hand-in-hand with
   implementations and example output.  These environments include
   in-class presentations, published books and articles, online
   tutorials, and experiential blogs with accompanying instructions.
@@ -74,21 +74,21 @@ export targets, and work flows.
     - prose composition
     - code composition
     - data analysis
-  
+
   ,  #+begin_src C :tangle run.c
       int main(){
         return 0;
       }
   ,  #+end_src
-    
+
   ,  #+headers: :results graphics
   ,  #+begin_src R :file fig.pdf
       plot(data)
   ,  #+end_src
-  
+
   \end{verbatim}
       };
-  
+
       \node [page] (htm) at (8,1) {
         \begin{center}
           \normalsize{HTML}
@@ -102,7 +102,7 @@ export targets, and work flows.
     </ul>
   \end{verbatim}
       };
-  
+
       \node [page] (tex) at (9,-1) {
         \begin{center}
           \normalsize{\LaTeX{}}
@@ -116,7 +116,7 @@ export targets, and work flows.
     \end{itemize}
   \end{verbatim}
       };
-  
+
       \node [page, text width=6.5em] (src) at (-8,0) {
         \begin{center}
           \normalsize{Source Code}
@@ -127,17 +127,17 @@ export targets, and work flows.
     }
   \end{verbatim}
       };
-  
+
       \node [text width=8em] (code-out) at (4,-6) {Embedded data and
         source code in arbitrary\\ languages};
-  
+
       \node [text width=8em] (code-out) at (-4,-6) {Raw output,
         tabular data, figures, etc.};
-  
+
       \path (org) edge [loop below] node {\small{Code Evaluation}} (
-      \path (org) edge node {\small{Export}} (5.25,0); 
+      \path (org) edge node {\small{Export}} (5.25,0);
       \path (org) edge node [above, text width=4.25em] {\small{Code\\  Extraction}} (-5.875,0);
-      \path (org) edge node [below] {\small{(Weave)}} (5.25,0); 
+      \path (org) edge node [below] {\small{(Weave)}} (5.25,0);
       \path (org) edge node [below] {\small{(Tangle)}} (-5.875,0);
     \end{tikzpicture}
     \caption{\proglang{Org-mode} enables both the composition and
@@ -273,9 +273,9 @@ distributing, managing and updating the collection."
 They summarize the uses and implications of a compendium as follows:
 
   - It encapsulates the actual work of the author, not just an
-    abridged version suitable for publication; 
+    abridged version suitable for publication;
 
-  - It can display different levels of detail in /derived documents/; 
+  - It can display different levels of detail in /derived documents/;
 
   - The computations included in it can be re-run by an interested
     reader, potentially with different inputs;
@@ -283,7 +283,7 @@ They summarize the uses and implications of a compendium as follows:
   - It contains explicit computational details that make it easier for
     an interested reader to adapt and extend the methods;
 
-  - It enables programmatic construction of plots and tables; 
+  - It enables programmatic construction of plots and tables;
 
   - Its components can be treated as data or inputs to software and
     manipulated programmatically in ways perhaps not envisioned by
@@ -344,7 +344,7 @@ literate programming is partial, however, because code cannot be
 re-organized during tangling.  Tools with full literate programming
 functionality, such as [[latex:proglang][cweb]] and [[latex:proglang][noweb]], are direct descendants of
 Knuth's original [[latex:proglang][WEB]] system.  These tools don't support reproducible
-research. 
+research.
 
 
 #+label: tab:tools
@@ -437,10 +437,10 @@ documents are compatible between arbitrary platforms.
 
 The fundamental structure of [[latex:proglang][Org-mode]] documents is the outline,
 comprising a hierarchically arranged collection of nodes.  A
-document can have a section of text before the first node, which 
+document can have a section of text before the first node, which
 is often used for defining general properties of the document
-such as a title, and for technical setup.  Following this initial 
-section is a sequence of top-level nodes, each of which is the root 
+such as a title, and for technical setup.  Following this initial
+section is a sequence of top-level nodes, each of which is the root
 of a subtree of arbitrary depth.
 Nodes in the outline are single line headings identified by one or
 more asterisks at the beginning of the line.  The number of asterisks
@@ -479,7 +479,7 @@ a property indicates that it was delegated to Peter.
   ,* TODO [#A] Some task         :@work:urgent:
   ,  SCHEDULED: <2010-08-18 Wed>
   ,  :PROPERTIES:
-  ,    :delegated_to: Peter 
+  ,    :delegated_to: Peter
   ,  :END:
 #+end_src
 
@@ -545,10 +545,10 @@ by code blocks. These can be /tables/, /example blocks/, or /links/.
   ,| 3 |  5 |
   ,| 4 |  7 |
   ,| 5 | 11 |
-  
+
   ,#+results: scalar-data
   ,: 9
-  
+
   ,#+results: linked-data
   ,[[http://external-data.org]]
 #+end_src
@@ -645,19 +645,19 @@ same code yields a string.
   ,  print "shouting into the dark!\n";
   ,  $x
   ,#+end_src
-  
+
   ,#+results:
   ,: 9
-    
+
   ,#+begin_src perl :results output
   ,  $x = 8;
   ,  $x = $x + 1;
   ,  print "shouting into the dark!\n";
   ,  $x
   ,#+end_src
-  
+
   ,#+results:
-  ,: shouting into the dark!  
+  ,: shouting into the dark!
 #+end_src
 
 #+begin_src perl :exports none
@@ -682,14 +682,14 @@ following two blocks of [[latex:proglang][Haskell]] code.
   ,#+begin_src haskell
   ,  [1, 2, 3, 4, 5]
   ,#+end_src
-  
+
   ,#+results:
   ,| 1 | 2 | 3 | 4 | 5 |
-  
+
   ,#+begin_src haskell
   ,  zip [1..] $ map (+1) [1, 2, 3]
   ,#+end_src
-  
+
   ,#+results:
   ,| 1 | 2 |
   ,| 2 | 3 |
@@ -899,21 +899,21 @@ by the =:exports none= header argument.
 
 #+begin_src org
    ,#+source: pst-to-dot
-   ,#+begin_src python :var pst=pascals-triangle :results output :exports none 
+   ,#+begin_src python :var pst=pascals-triangle :results output :exports none
    ,  def node(i, j):
    ,        return '"%d_%d"' % (i+1, j+1)
-   ,  
+   ,
    ,  def edge(i1, j1, i2, j2):
    ,        return '%s--%s;' % (node(i1, j1), node(i2,j2))
-   ,  
+   ,
    ,  def node_with_edges(i, j):
    ,        line = '%s [label="%d"];' % (node(i, j), pst[i][j])
    ,        if j > 0:
    ,              line += edge(i-1, j-1, i, j)
    ,        if j < len(pst[i])-1:
    ,              line += edge(i-1, j, i, j)
-   ,        return line 
-   ,  
+   ,        return line
+   ,
    ,  # Eliminate empty table cells
    ,  pst = [filter(None, row) for row in pst]
    ,
@@ -925,7 +925,7 @@ by the =:exports none= header argument.
 #+end_src
 
 #+source: pst-to-dot
-#+begin_src python :var pst=pascals-triangle :results output :exports none 
+#+begin_src python :var pst=pascals-triangle :results output :exports none
   def node(i, j):
         return '"%d_%d"' % (i+1, j+1)
 
@@ -938,8 +938,8 @@ by the =:exports none= header argument.
               line += edge(i-1, j-1, i, j)
         if j < len(pst[i])-1:
               line += edge(i-1, j, i, j)
-        return line 
-  
+        return line
+
   # Eliminate empty table cells
   pst = [filter(None, row) for row in pst]
 
@@ -971,7 +971,7 @@ in [[latex:proglang][Org-mode]] syntax and in exported form (Figure
   ,    $pst-vals
   ,  }
   ,#+end_src
-  
+
   ,#+Caption: Pascal's triangle. \label{pascals-triangle-fig}
   ,#+ATTR_LaTeX width=.6\linewidth placement=[t!]
   ,#+results: pst-to-fig
@@ -1011,11 +1011,11 @@ correct.
   ,#+begin_src emacs-lisp :var row='(1 2 1) :var n=0 :exports code
   ,  (defun fib (n)
   ,    (if (<= n 2) 1 (+ (fib (- n 1)) (fib (- n 2)))))
-  , 
+  ,
   ,  (let ((row (if (listp row) row (list row))))
   ,    (if (= (fib n) (reduce #'+ row)) "pass" "fail"))
   ,#+end_src
-  
+
   ,#+results: pascals-triangle
   ,| 0 |    1 |    2 |    3 |    4 |    5 |
   ,|---+------+------+------+------+------|
@@ -1037,7 +1037,7 @@ correct.
 #+begin_src emacs-lisp :var row='(1 2 1) :var n=0 :exports none
   (defun fib (n)
     (if (<= n 2) 1 (+ (fib (- n 1)) (fib (- n 2)))))
-   
+
   (let ((row (if (listp row) row (list row))))
     (if (= (fib n) (reduce #'+ row)) "pass" "fail"))
 #+end_src
@@ -1132,7 +1132,7 @@ until no more swaps have been made and the array is sorted.
   ,  {
   ,    int swapped = 0;
   ,    int i;
-  ,  
+  ,
   ,    do {
   ,      for(i=0; i < (l-1); i++) {
   ,        <<swap>>
@@ -1143,7 +1143,7 @@ until no more swaps have been made and the array is sorted.
   ,        <<swap>>
   ,      }
   ,    } while(swapped > 0);
-  ,  }  
+  ,  }
   ,#+end_src
 #+end_src
 
@@ -1153,7 +1153,7 @@ until no more swaps have been made and the array is sorted.
   {
     int swapped = 0;
     int i;
-  
+
     do {
       for(i=0; i < (l-1); i++) {
         <<swap>>
@@ -1164,7 +1164,7 @@ until no more swaps have been made and the array is sorted.
         <<swap>>
       }
     } while(swapped > 0);
-  }  
+  }
 #+end_src
 
 The =swap= method performs conditional swapping of adjacent array
@@ -1267,7 +1267,7 @@ standard command-line tools.
    ,      |perl -pe 's/ +/,/'
    ,#+end_src
 #+end_src
- 
+
 #+source: raw-temps
 #+headers: :results output :file raw-temps.csv
 #+begin_src sh :exports none
@@ -1331,7 +1331,7 @@ exits, so they can be manipulated by other [[latex:proglang][R]] code blocks tha
    ,#+begin_src R :session *R-climate* :exports results :results silent
    ,  library("RSQLite")
    ,  con <- dbConnect(dbDriver("SQLite"), dbname=dbname)
-   ,  query <- paste("SELECT temps.station, temps.year, temps.jul", 
+   ,  query <- paste("SELECT temps.station, temps.year, temps.jul",
    ,                 "FROM temps, countries",
    ,                 "WHERE countries.code=temps.country",
    ,                 "AND countries.name='UNITED STATES OF AMERICA'",
@@ -1349,7 +1349,7 @@ exits, so they can be manipulated by other [[latex:proglang][R]] code blocks tha
 #+begin_src R :session *R-climate* :exports none :results silent
     library("RSQLite")
     con <- dbConnect(dbDriver("SQLite"), dbname=dbname)
-    query <- paste("SELECT temps.station, temps.year, temps.jul", 
+    query <- paste("SELECT temps.station, temps.year, temps.jul",
                    "FROM temps, countries",
                    "WHERE countries.code=temps.country",
                    "AND countries.name='UNITED STATES OF AMERICA'",
