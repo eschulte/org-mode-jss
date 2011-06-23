@@ -914,10 +914,8 @@ by the =:exports none= header argument.
    ,              line += edge(i-1, j, i, j)
    ,        return line
    ,
-   ,  # Eliminate empty table cells
    ,  pst = [filter(None, row) for row in pst]
    ,
-   ,  # Output dot commands
    ,  print '\n'.join([node_with_edges(i, j)
    ,                   for i in range(len(pst))
    ,                   for j in range(len(pst[i]))])
@@ -940,10 +938,8 @@ by the =:exports none= header argument.
               line += edge(i-1, j, i, j)
         return line
 
-  # Eliminate empty table cells
   pst = [filter(None, row) for row in pst]
 
-  # Output dot commands
   print '\n'.join([node_with_edges(i, j)
                    for i in range(len(pst))
                    for j in range(len(pst[i]))])
@@ -1010,10 +1006,14 @@ correct.
   ,#+source: pst-check
   ,#+begin_src emacs-lisp :var row='(1 2 1) :var n=0 :exports code
   ,  (defun fib (n)
-  ,    (if (<= n 2) 1 (+ (fib (- n 1)) (fib (- n 2)))))
+  ,    (if (<= n 2)
+  ,        1
+  ,      (+ (fib (- n 1)) (fib (- n 2)))))
   ,
   ,  (let ((row (if (listp row) row (list row))))
-  ,    (if (= (fib n) (reduce #'+ row)) "pass" "fail"))
+  ,    (if (= (fib n) (reduce #'+ row))
+  ,        "pass"
+  ,      "fail"))
   ,#+end_src
 
   ,#+results: pascals-triangle
@@ -1036,10 +1036,14 @@ correct.
 #+source: pst-check
 #+begin_src emacs-lisp :var row='(1 2 1) :var n=0 :exports none
   (defun fib (n)
-    (if (<= n 2) 1 (+ (fib (- n 1)) (fib (- n 2)))))
-
+    (if (<= n 2)
+        1
+      (+ (fib (- n 1)) (fib (- n 2)))))
+    
   (let ((row (if (listp row) row (list row))))
-    (if (= (fib n) (reduce #'+ row)) "pass" "fail"))
+    (if (= (fib n) (reduce #'+ row))
+        "pass"
+      "fail"))
 #+end_src
 
 ** Literate programming---cocktail sort
