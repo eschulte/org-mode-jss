@@ -8,8 +8,8 @@ involves evaluating the source code blocks embedded in babel.org,
 performing the relevant calculations, and generating the referenced
 figures.
 
-1. Install the latest version of emacs "Emacs 24" from
-   http://savannah.gnu.org/projects/emacs
+1. Install the latest version of emacs "Emacs 24" from source with
+   : git clone git://git.savannah.gnu.org/emacs.git
 
 2. Ensure that the following executables are installed on your system
    and in your $PATH
