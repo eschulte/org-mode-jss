@@ -4,8 +4,9 @@
   (require 'ess-site)
   (setq ess-ask-for-ess-directory nil))
 
-;; this line only required until the upcomming Org-mode/Emacs24 sync
+;; these lines only required until the upcomming Org-mode/Emacs24 sync
 (load "~/.emacs.d/src/org/lisp/org-exp-blocks.el")
+(load "~/.emacs.d/src/org/lisp/org-exp.el")
 
 ;; Configure Babel to support all languages included in the manuscript
 (org-babel-do-load-languages
