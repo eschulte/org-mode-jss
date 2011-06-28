@@ -1482,8 +1482,8 @@ powerful tool to communicate their work and make it more accessible.
   :END:
 The authors gratefully acknowledge the [[latex:proglang][Org-mode]] community whose ideas
 and feedback both guided and motivated this work.  Additionally Eric
-Schulte and Dan Davison would like to acknowledge Counsyl for its
-support of this development.
+Schulte would like to acknowledge Counsyl for its support of this
+development.
 
 #+begin_LaTeX
   \bibliography{babel}
