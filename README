@@ -12,7 +12,8 @@ figures.
    : git clone git://git.savannah.gnu.org/emacs.git
 
 2. Ensure that the following executables are installed on your system
-   and in your $PATH
+   and in your $PATH.  Run "make check" to print the names of all
+   missing dependencies.
    - curl
    - dot
    - perl

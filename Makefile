@@ -1,6 +1,7 @@
 CC=gcc
 EMACS=emacs
 BATCH_EMACS=$(EMACS) --batch -Q -l init.el babel.org
+REQUIREMENTS=curl dot perl python R sh sqlite3
 
 all: babel.pdf
 
@@ -31,6 +32,11 @@ cocktail.c: babel.org
 
 cocktail: cocktail.c
 	$(CC) -o cocktail cocktail.c
+
+check:
+	for req in $(REQUIREMENTS); do \
+		which $$req > /dev/null || echo "MISSING DEPENDENCY $$req"; \
+	done
 
 clean:
 	rm -f *.aux *.log babel.ps *.dvi *.blg *.bbl *.toc *.tex *~ *.out babel.pdf cocktail*
