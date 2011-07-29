@@ -173,7 +173,7 @@ productive environment for authoring mixed prose and code projects
 running a single export command.  This command executed the source
 code examples and generated the figures before exporting its content
 to a LaTeX file marked up according the journal's specification. The
-[[latex:proglang][Org-mode]] source for this paper is available online.[fn:5]
+[[latex:proglang][Org-mode]] source for this paper is available online.[fn:1]
 
 * Background
   :PROPERTIES:
@@ -508,7 +508,7 @@ and matrix data are represented as tables where the columns are marked
 by vertical bars and rows are optionally separated by dashed lines as
 shown in the following example.  Org-mode provides a number of
 commands for natural table navigation and editing.  The Emacs
-mathematical tool, [[latex:pkg][calc]],[fn:3] can be used to carry out computations
+mathematical tool, [[latex:pkg][calc]],[fn:2] can be used to carry out computations
 in tables.  This feature is similar to spreadsheet applications, but
 [[latex:proglang][Org-mode]] uses plain text to represent both data and formulas.
 
@@ -712,7 +712,7 @@ for cross-referencing.
 
 Much more information about controlling the evaluation of code and the
 handling of code results is available in the [[latex:proglang][Org-mode]]
-documentation. [fn:4]
+documentation.[fn:3]
 
 *** Variables
 [[latex:proglang][Org-mode]] implements a simple system of passing arguments to code
@@ -795,7 +795,7 @@ understood by the reader.
 [[latex:proglang][Org-mode]] has been designed with security measures to protect users
 from accidental or uninformed execution of code.  By default /every/
 execution of a code block requires explicit confirmation from the
-user.[fn:1]
+user.[fn:4]
 
 ** Where to find information about Org-mode
 The official web site for [[latex:proglang][Org-mode]] is maintained by one of us (CD) at
@@ -1048,7 +1048,7 @@ correct.
 #+end_src
 
 ** Literate programming---cocktail sort
-Cocktail sort[fn:2] is a variation of bubble sort in which the
+Cocktail sort[fn:5] is a variation of bubble sort in which the
 direction of array traversal is alternated with each pass.  As a
 result cocktail sort is more efficient than bubble sort for arrays
 with small elements located at the end of the array.
@@ -1492,12 +1492,12 @@ development.
 
 * Footnotes
 
-[fn:1] These confirmation requests can be stifled by customizing the =org-confirm-babel-evaluate= variable.
+[fn:1] http://github.com/eschulte/org-mode-jss
 
-[fn:2] This implementation of Cocktail Sort is adapted from http://rosettacode.org/.
+[fn:2] David Gillespie 1990, http://www.gnu.org/software/emacs/calc.html.
 
-[fn:3] David Gillespie 1990, http://www.gnu.org/software/emacs/calc.html.
+[fn:3] http://orgmode.org/manual/Working-With-Source-Code.html
 
-[fn:4] http://orgmode.org/manual/Working-With-Source-Code.html.
+[fn:4] These confirmation requests can be stifled by customizing the =org-confirm-babel-evaluate= variable.
 
-[fn:5] http://github.com/eschulte/org-mode-jss
+[fn:5] This implementation of Cocktail Sort is adapted from http://rosettacode.org/.
