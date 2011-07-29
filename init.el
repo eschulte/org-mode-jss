@@ -4,9 +4,6 @@
   (require 'ess-site)
   (setq ess-ask-for-ess-directory nil))
 
-;; adjust for your system
-(load "/usr/local/src/emacs/lisp/org/org-exp-blocks.el")
-
 ;; Configure Babel to support all languages included in the manuscript
 (org-babel-do-load-languages
  'org-babel-load-languages
@@ -23,6 +20,7 @@
 (setq org-confirm-babel-evaluate nil)
 
 ;; Add a JSS-specific link type
+(require 'cl)
 (require 'org-latex)
 (org-add-link-type
  "latex" nil
