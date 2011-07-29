@@ -711,7 +711,8 @@ within the document and included in exports with captions and labels
 for cross-referencing.
 
 Much more information about controlling the evaluation of code and the
-handling of code results is available in the [[latex:proglang][Org-mode]] documentation.[fn:4]
+handling of code results is available in the [[latex:proglang][Org-mode]]
+documentation. [fn:4]
 
 *** Variables
 [[latex:proglang][Org-mode]] implements a simple system of passing arguments to code
@@ -1491,16 +1492,12 @@ development.
 
 * Footnotes
 
-[fn:1] These confirmation requests can be stifled by customizing the
-=org-confirm-babel-evaluate= variable.
+[fn:1] These confirmation requests can be stifled by customizing the =org-confirm-babel-evaluate= variable.
 
-[fn:2] This implementation of Cocktail Sort is adapted from
-http://rosettacode.org/.
+[fn:2] This implementation of Cocktail Sort is adapted from http://rosettacode.org/.
 
-[fn:3] David Gillespie 1990,
-http://www.gnu.org/software/emacs/calc.html.
+[fn:3] David Gillespie 1990, http://www.gnu.org/software/emacs/calc.html.
 
 [fn:4] http://orgmode.org/manual/Working-With-Source-Code.html.
 
 [fn:5] http://github.com/eschulte/org-mode-jss
-
