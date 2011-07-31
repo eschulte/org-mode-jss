@@ -174,7 +174,7 @@ a single export command.  This command executed the source code
 examples and generated the figures before exporting its content to a
 LaTeX file marked up according the journal's specification. The
 [[latex:proglang][Org-mode]] source for this paper is available online.[fn::
-http://github.com/eschulte/org-mode-jss]
+See http://github.com/eschulte/org-mode-jss.]
 
 * Background
   :PROPERTIES:
@@ -715,8 +715,7 @@ for cross-referencing.
 
 Much more information about controlling the evaluation of code and the
 handling of code results is available in the [[latex:proglang][Org-mode]]
-documentation.[fn::
-http://orgmode.org/manual/Working-With-Source-Code.html]
+documentation.[fn:: See http://orgmode.org/manual/Working-With-Source-Code.html.]
 
 *** Variables
 [[latex:proglang][Org-mode]] implements a simple system of passing arguments to code
