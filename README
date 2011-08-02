@@ -28,7 +28,10 @@ figures.
      - the executable should be named "sqlite3", if not then
        customize the value of `org-babel-sqlite3-command'
 
-4. Install the "RSQlite" R library
+4. Install the "RSQlite" R library with
+   #+begin_src R
+     install.packages('RSQlite')
+   #+end_src
 
 5. Emacs Speaks Statistics (ESS) provides support for communication
    between Emacs and a persistent R process. To install ESS download
@@ -38,12 +41,11 @@ figures.
    of init.el in this directory to point to your local ess/lisp/
    directory.
 
-6. Alternatively, follow steps 6 through 9 or call make from within
-   the directory that holds babel.org.
+6. Alternatively, follow steps 7 through 10 below for interactive
+   compilation or simply call =make= from within this directory.
 
 7. From the command line, cd into the directory that holds babel.org
-   and then launch Emacs using the following command
-   
+   and then launch Emacs using the following command.
    : emacs -Q -l init.el babel.org
 
 8. The resulting Emacs window will be visiting the Org-mode file,
