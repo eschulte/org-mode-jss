@@ -8,7 +8,8 @@ involves evaluating the source code blocks embedded in babel.org,
 performing the relevant calculations, and generating the referenced
 figures.
 
-1. Install the latest version of emacs "Emacs 24" from source with
+1. Install the latest version of emacs (24.0.50.2 or greater) from
+   source with
    :  bzr branch --stacked bzr://bzr.savannah.gnu.org/emacs/trunk emacs
 
 2. Ensure that no old versions of Org-mode exist in your Emacs load
