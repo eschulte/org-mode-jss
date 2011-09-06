@@ -361,6 +361,7 @@ research.
 | [[latex:proglang][cweb]]           | yes     | no  | yes    | yes    | [[latex:proglang][C]]/[[latex:proglang][C++]]    | \citet{knuth94:_cweb_system_struc_docum} |
 | [[latex:proglang][Sweave]]         | partial | yes | yes    | yes    | [[latex:proglang][R]]        | \citet{sweave}                           |
 | [[latex:proglang][SASweave]]       | partial | yes | yes    | yes    | [[latex:proglang][R]]/[[latex:proglang][SAS]]    | \citet{Lenth:2007:SLP}                   |
+| [[latex:proglang][Statweave]]      | partial | yes | yes    | yes    | any      | \citet{lenth09:_statw_users_manual}      |
 | [[latex:proglang][Scribble]]       | yes     | yes | yes    | yes    | [[latex:proglang][scheme]]   | \citet{DBLP:conf/icfp/FlattBF09}         |
 | [[latex:proglang][Org-mode]]       | yes     | yes | yes    | yes    | any      |                                          |
 
@@ -368,7 +369,7 @@ research.
 Probably the most popular reproducible research tool is [[latex:proglang][Sweave]], which
 is used extensively by the [[latex:proglang][R]] programming community.  The [[latex:proglang][Sweave]]
 approach to reproducible research has spawned similar tools, such as
-[[latex:proglang][SASweave]], some of which support statistical languages other than [[latex:proglang][R]],
+[[latex:proglang][SASweave]] and  [[latex:proglang][Statweave]], some of which support statistical languages other than [[latex:proglang][R]],
 and which target document preparation systems other than LaTeX,
 including Open Document Format and Microsoft Word
 \citep{Lenth:2007:SLP,baier07:_excel,kuhn10:_odfweav_packag,lenth09:_statw_users_manual}.
@@ -392,8 +393,11 @@ programming languages.
 At the core of [[latex:proglang][Org-mode]] is the Emacs text editor \citep{emacs} and
 [[latex:proglang][Emacs Lisp]] \citep{lewis10:_gnu_emacs_lisp_refer_manual}, a dialect of
 [[latex:proglang][Lisp]] that supports the editing of text documents.  The Emacs editor
-has been under development since the mid 1970s and is currently at
-version 23.  [[latex:proglang][Org-mode]] extends Emacs with a simple and powerful markup
+has been under development since the mid 1970s and at the time of
+writing the official released version is 23.  The functionality
+described in this paper is implemented in the development version of
+Emacs which will be released as Emacs 24.
+[[latex:proglang][Org-mode]] extends Emacs with a simple and powerful markup
 language that turns it into a language for creating, parsing, and
 interacting with hierarchically-organized text documents.  Its rich
 feature set includes text structuring, project management, and a
@@ -761,7 +765,7 @@ code file suitable for execution by a computer.
 
 - Tangling :: Source code in an [[latex:proglang][Org-mode]] document can be re-arranged
      on export.  Often, the order in which code needs to be
-     presented toa computer differs from the order in which the code may
+     presented to a computer differs from the order in which the code may
      be best organized in a document.  Literate programming systems
      like [[latex:proglang][noweb]] solve this problem using code-block references that
      are expanded as part of the tangle process \citep{noweb}.

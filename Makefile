@@ -5,7 +5,7 @@ REQUIREMENTS=curl dot perl python R sh sqlite3
 
 all: babel.pdf
 
-babel.tex: babel.org
+babel.tex: babel.org init.el
 	$(BATCH_EMACS) -f org-export-as-latex
 
 babel.pdf: babel.tex

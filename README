@@ -8,7 +8,8 @@ involves evaluating the source code blocks embedded in babel.org,
 performing the relevant calculations, and generating the referenced
 figures.
 
-1. Install the latest version of emacs "Emacs 24" from source with
+1. Install the latest version of emacs (24.0.50.2 or greater) from
+   source with
    :  bzr branch --stacked bzr://bzr.savannah.gnu.org/emacs/trunk emacs
 
 2. Ensure that no old versions of Org-mode exist in your Emacs load
@@ -27,7 +28,10 @@ figures.
      - the executable should be named "sqlite3", if not then
        customize the value of `org-babel-sqlite3-command'
 
-4. Install the "RSQlite" R library
+4. Install the "RSQlite" R library with
+   #+begin_src R
+     install.packages('RSQlite')
+   #+end_src
 
 5. Emacs Speaks Statistics (ESS) provides support for communication
    between Emacs and a persistent R process. To install ESS download
@@ -37,12 +41,11 @@ figures.
    of init.el in this directory to point to your local ess/lisp/
    directory.
 
-6. Alternatively, follow steps 6 through 9 or call make from within
-   the directory that holds babel.org.
+6. Alternatively, follow steps 7 through 10 below for interactive
+   compilation or simply call =make= from within this directory.
 
 7. From the command line, cd into the directory that holds babel.org
-   and then launch Emacs using the following command
-   
+   and then launch Emacs using the following command.
    : emacs -Q -l init.el babel.org
 
 8. The resulting Emacs window will be visiting the Org-mode file,
@@ -54,3 +57,8 @@ figures.
 
 10. The resulting babel.tex file can be built from the command line
     with pdflatex and bibtex.
+
+Note: Some of the code blocks in babel.org are commented out for
+  purposes of demonstrating Org-mode syntax and are thus not evaluated
+  during export.  When this is the case an interactively executable
+  but non-exporting version of the code block is included in-line.

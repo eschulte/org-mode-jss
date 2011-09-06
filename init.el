@@ -1,12 +1,10 @@
 ;; Require ESS to allow evaluation of R code blocks
 (let ((ess-path "~/.emacs.d/src/ess-5.6/lisp/"))       ; <- adjust for your system
   (add-to-list 'load-path ess-path)
+  (setq ess-ask-for-ess-directory nil)
   (require 'ess-site)
-  (setq ess-ask-for-ess-directory nil))
-
-(add-to-list 'load-path "~/.emacs.d/src/org/lisp") ; <- adjust for your system
-(load "~/.emacs.d/src/org/lisp/org-install.el")    ; <- adjust for your system
-(org-reload)
+  (require 'cl)
+  (require 'org-latex))
 
 ;; Configure Babel to support all languages included in the manuscript
 (org-babel-do-load-languages
@@ -24,8 +22,6 @@
 (setq org-confirm-babel-evaluate nil)
 
 ;; Add a JSS-specific link type
-(require 'cl)
-(require 'org-latex)
 (org-add-link-type
  "latex" nil
  (lambda (path desc format)
@@ -45,7 +41,8 @@
           (lambda ()
             (replace-regexp "’" "'")
             (goto-char (point-min))
-            (replace-regexp (regexp-quote "\texttt{SCHEDULED:}") "SCHEDULED:")
+            (replace-regexp "  \\\\texttt{SCHEDULED:} <2010-08-18 Wed>\n\n"
+                            "   SCHEDULED: <2010-08-18 Wed>\n")
             (goto-char (point-min))
             (replace-regexp (regexp-quote ",*") "*")
             (replace-regexp (regexp-quote ",#") "#")))
