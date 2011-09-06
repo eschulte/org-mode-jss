@@ -393,8 +393,11 @@ programming languages.
 At the core of [[latex:proglang][Org-mode]] is the Emacs text editor \citep{emacs} and
 [[latex:proglang][Emacs Lisp]] \citep{lewis10:_gnu_emacs_lisp_refer_manual}, a dialect of
 [[latex:proglang][Lisp]] that supports the editing of text documents.  The Emacs editor
-has been under development since the mid 1970s and is currently at
-version 23.  [[latex:proglang][Org-mode]] extends Emacs with a simple and powerful markup
+has been under development since the mid 1970s and at the time of
+writing the official released version is 23.  The functionality
+described in this paper is implemented in the development version of
+Emacs which will be released as Emacs 24.
+[[latex:proglang][Org-mode]] extends Emacs with a simple and powerful markup
 language that turns it into a language for creating, parsing, and
 interacting with hierarchically-organized text documents.  Its rich
 feature set includes text structuring, project management, and a
