@@ -41,7 +41,8 @@
           (lambda ()
             (replace-regexp "’" "'")
             (goto-char (point-min))
-            (replace-regexp (regexp-quote "\texttt{SCHEDULED:}") "SCHEDULED:")
+            (replace-regexp "  \\\\texttt{SCHEDULED:} <2010-08-18 Wed>\n\n"
+                            "   SCHEDULED: <2010-08-18 Wed>\n")
             (goto-char (point-min))
             (replace-regexp (regexp-quote ",*") "*")
             (replace-regexp (regexp-quote ",#") "#")))
