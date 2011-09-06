@@ -57,3 +57,8 @@ figures.
 
 10. The resulting babel.tex file can be built from the command line
     with pdflatex and bibtex.
+
+Note: Some of the code blocks in babel.org are commented out for
+  purposes of demonstrating Org-mode syntax and are thus not evaluated
+  during export.  When this is the case an interactively executable
+  but non-exporting version of the code block is included in-line.
