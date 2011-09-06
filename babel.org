@@ -765,7 +765,7 @@ code file suitable for execution by a computer.
 
 - Tangling :: Source code in an [[latex:proglang][Org-mode]] document can be re-arranged
      on export.  Often, the order in which code needs to be
-     presented toa computer differs from the order in which the code may
+     presented to a computer differs from the order in which the code may
      be best organized in a document.  Literate programming systems
      like [[latex:proglang][noweb]] solve this problem using code-block references that
      are expanded as part of the tangle process \citep{noweb}.
