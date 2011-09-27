@@ -328,7 +328,7 @@ If the [[latex:proglang][Sweave]] document is accompanied by the data files and 
 code that is used, then the reader can trace a result back to the
 relevant computations and through to the original data.
 
-** Existing Tools
+** Existing tools
 Several software tools support composition of combined prose and code,
 but in a less comprehensive manner than [[latex:proglang][Org-mode]] (Table
 \ref{tab:tools}).  Simple comment extraction engines such as [[latex:proglang][POD]] and
@@ -1379,7 +1379,7 @@ Finally the persistent variables in the =*R-climate*= session are used
 to generate figures from the climate data. Here we fit a straight line
 to the July temperatures at each station which has measurements
 spanning the period 1880-1980, and plot a histogram of the fitted
-slope parameters. The figure is written to a pdf file for
+slope parameters. The figure is written to a PDF file for
 incorporation into the exported document (Figure
 \ref{fig:climate-trend}).
 
@@ -1496,5 +1496,5 @@ Schulte would like to acknowledge Counsyl for its support of this
 development.
 
 #+begin_LaTeX
-  \bibliography{babel}
+  \bibliography{jss705}
 #+end_LaTeX

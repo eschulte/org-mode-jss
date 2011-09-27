@@ -22,7 +22,7 @@ figures.
    - dot
    - perl
    - python
-   - R
+   - R (including the RSQLite package)
    - sh
    - sqlite
      - the executable should be named "sqlite3", if not then
