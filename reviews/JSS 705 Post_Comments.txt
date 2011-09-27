@@ -1,0 +1,34 @@
+705 Schulte, Davison, Dye, Dominik
+
+A Multi-Language Computing Environment for Literate Programming and Reproducible Research
+
+For further instruction on JSS style requirements please see the JSS style
+manual (in particular section 2.1 Style Checklist) at http://www.jstatsoft.org/downloads/JSSstyle.zip
+
+Please see FAQ at: http://www.jstatsoft.org/style
+And for further references please see RECENT JSS papers for detailed documentation and examples. 
+
+Manuscript:
+o As a reminder, please make sure that:
+  - \proglang, \pkg and \code have been used for highlighting throughout
+the paper (including titles and references), except where explicitly escaped.
+
+o In the References section, the author "Lang DT" should be "Temple Lang, D".
+
+o Please use "PDF" instead of "pdf" in the text.
+
+o All (sub)section should be in sentence style.
+i.e. Sentence style: Only the first word in a title is capitalized, as is
+the first word after a colon or a hyphen. Proper names should remain in upper-case. See FAQ for more details.
+
+o All captions should appear below the corresponding figure/table. The
+captions should be in sentence style and end with a period.
+
+o All titles in the BibTex file should be in title style.
+i.e. Title style: All principal words should be capitalized. Please see FAQ for more details.
+
+o Please include a standalone replication of all code/examples used within the manuscript.
+
+o Please include all files that are referenced in the manuscript.
+
+o Please include a BibTex file (.bib).
