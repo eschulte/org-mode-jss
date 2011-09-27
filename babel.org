@@ -328,7 +328,7 @@ If the [[latex:proglang][Sweave]] document is accompanied by the data files and 
 code that is used, then the reader can trace a result back to the
 relevant computations and through to the original data.
 
-** Existing Tools
+** Existing tools
 Several software tools support composition of combined prose and code,
 but in a less comprehensive manner than [[latex:proglang][Org-mode]] (Table
 \ref{tab:tools}).  Simple comment extraction engines such as [[latex:proglang][POD]] and
