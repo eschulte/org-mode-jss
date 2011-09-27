@@ -1379,7 +1379,7 @@ Finally the persistent variables in the =*R-climate*= session are used
 to generate figures from the climate data. Here we fit a straight line
 to the July temperatures at each station which has measurements
 spanning the period 1880-1980, and plot a histogram of the fitted
-slope parameters. The figure is written to a pdf file for
+slope parameters. The figure is written to a PDF file for
 incorporation into the exported document (Figure
 \ref{fig:climate-trend}).
 
