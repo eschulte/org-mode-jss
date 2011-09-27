@@ -1496,5 +1496,5 @@ Schulte would like to acknowledge Counsyl for its support of this
 development.
 
 #+begin_LaTeX
-  \bibliography{babel}
+  \bibliography{jss705}
 #+end_LaTeX
