@@ -370,7 +370,7 @@ approach to reproducible research has spawned similar tools, such as
 [[latex:code][SASweave]] and  [[latex:code][Statweave]], some of which support statistical languages other than [[latex:proglang][R]],
 and which target document preparation systems other than LaTeX,
 including Open Document Format and Microsoft Word
-\citep{Lenth:2007:SLP,baier07:_excel,kuhn10:_odfweav_packag,lenth09:_statw_users_manual}.
+\citep{Lenth:2007:SLP,baier07:_excel,odfWeave,lenth09:_statw_users_manual}.
 [[latex:code][Sweave]] and its descendants don't support code block re-organization
 during tangling and thus only partially support literate programming.
 
