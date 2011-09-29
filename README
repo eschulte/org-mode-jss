@@ -1,10 +1,10 @@
 # -*- mode: org -*-
 
-This directory holds the babel.org file, which is a plain text
+This directory holds the jss705.org file, which is a plain text
 Org-mode document introducing the use of Org-mode for reproducible
 research.  The following instructions can be used to generate a
 viewable pdf version of this document.  The generation process
-involves evaluating the source code blocks embedded in babel.org,
+involves evaluating the source code blocks embedded in jss705.org,
 performing the relevant calculations, and generating the referenced
 figures.
 
@@ -44,21 +44,21 @@ figures.
 6. Alternatively, follow steps 7 through 10 below for interactive
    compilation or simply call =make= from within this directory.
 
-7. From the command line, cd into the directory that holds babel.org
+7. From the command line, cd into the directory that holds jss705.org
    and then launch Emacs using the following command.
-   : emacs -Q -l init.el babel.org
+   : emacs -Q -l init.el jss705.org
 
 8. The resulting Emacs window will be visiting the Org-mode file,
-   babel.org.  From here it is possible to navigate and edit the
+   jss705.org.  From here it is possible to navigate and edit the
    document, and to inspect and evaluate source code blocks.
 
 9. Export the document to LaTeX with the M-x org-export-as-latex
    command---just press RET in reply to queries from R.
 
-10. The resulting babel.tex file can be built from the command line
+10. The resulting jss705.tex file can be built from the command line
     with pdflatex and bibtex.
 
-Note: Some of the code blocks in babel.org are commented out for
+Note: Some of the code blocks in jss705.org are commented out for
   purposes of demonstrating Org-mode syntax and are thus not evaluated
   during export.  When this is the case an interactively executable
   but non-exporting version of the code block is included in-line.
