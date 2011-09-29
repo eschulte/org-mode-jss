@@ -1,4 +1,3 @@
-% Created 2011-09-29 Thu 11:25
 \documentclass[article,shortnames]{jss}
 
 \usepackage{tikz}
@@ -332,8 +331,8 @@ relevant computations and through to the original data.
 
 Several software tools support composition of combined prose and code,
 but in a less comprehensive manner than \pkg{Org-mode} (Table
-\ref{tab:tools}).  Simple comment extraction engines such as \pkg{POD} and
-\pkg{Javadoc} are by far the most widely used among these tools.  These, and
+\ref{tab:tools}).  Simple comment extraction engines such as \code{POD} and
+\code{Javadoc} are by far the most widely used among these tools.  These, and
 other tools like them, are specific to a single language and are used
 for embedded API documentation exported as HTML---unlike more
 sophisticated tools which generally support a number of documentation
@@ -350,23 +349,23 @@ research.
 
 
 \begin{table}[t!]\footnotesize
+\caption{Comparison of existing tools} \label{tab:tools}
 \begin{center}
 \begin{tabular}{l|cccccl}
                                    &           &       &  \LaTeX{}  &  HTML    &                               &                                            \\
  Tool                              &  LP       &  RR   &  Export    &  Export  &  Language                     &  Reference                                 \\
 \hline
- \pkg{Javadoc}                &  partial  &  no   &  no        &  yes     &  \proglang{Java}              &  \citet{oracle03:_java_api_docum_gener}    \\
- \pkg{POD}                    &  partial  &  no   &  no        &  yes     &  \proglang{Perl}              &  \citet{wall00:_progr_perl}                \\
+ \code{Javadoc}                    &  partial  &  no   &  no        &  yes     &  \proglang{Java}              &  \citet{oracle03:_java_api_docum_gener}    \\
+ \code{POD}                        &  partial  &  no   &  no        &  yes     &  \proglang{Perl}              &  \citet{wall00:_progr_perl}                \\
  \proglang{Haskell} \texttt{.lhs}  &  partial  &  no   &  yes       &  yes     &  \proglang{Haskell}           &  \citet{jones03:_haskel_languag_librar}    \\
- \pkg{noweb}                  &  yes      &  no   &  yes       &  yes     &  any                          &  \citet{noweb}                             \\
- \pkg{cweb}                   &  yes      &  no   &  yes       &  yes     &  \proglang{C}/\proglang{C++}  &  \citet{knuth94:_cweb_system_struc_docum}  \\
- \code{Sweave}                 &  partial  &  yes  &  yes       &  yes     &  \proglang{R}                 &  \citet{sweave}                            \\
- \pkg{SASweave}               &  partial  &  yes  &  yes       &  yes     &  \proglang{R}/\proglang{SAS}  &  \citet{Lenth:2007:SLP}                    \\
- \pkg{Statweave}              &  partial  &  yes  &  yes       &  yes     &  any                          &  \citet{lenth09:_statw_users_manual}       \\
- \pkg{Scribble}               &  yes      &  yes  &  yes       &  yes     &  \proglang{scheme}            &  \citet{DBLP:conf/icfp/FlattBF09}          \\
- \pkg{Org-mode}               &  yes      &  yes  &  yes       &  yes     &  any                          &                                            \\
+ \pkg{noweb}                       &  yes      &  no   &  yes       &  yes     &  any                          &  \citet{noweb}                             \\
+ \pkg{cweb}                        &  yes      &  no   &  yes       &  yes     &  \proglang{C}/\proglang{C++}  &  \citet{knuth94:_cweb_system_struc_docum}  \\
+ \code{Sweave}                     &  partial  &  yes  &  yes       &  yes     &  \proglang{R}                 &  \citet{sweave}                            \\
+ \code{SASweave}                   &  partial  &  yes  &  yes       &  yes     &  \proglang{R}/\proglang{SAS}  &  \citet{Lenth:2007:SLP}                    \\
+ \code{Statweave}                  &  partial  &  yes  &  yes       &  yes     &  any                          &  \citet{lenth09:_statw_users_manual}       \\
+ \code{Scribble}                   &  yes      &  yes  &  yes       &  yes     &  \proglang{scheme}            &  \citet{DBLP:conf/icfp/FlattBF09}          \\
+ \pkg{Org-mode}                    &  yes      &  yes  &  yes       &  yes     &  any                          &                                            \\
 \end{tabular}
-\caption{Comparison of existing tools \label{tab:tools}}
 \end{center}
 \end{table}
 
@@ -375,16 +374,16 @@ research.
 Probably the most popular reproducible research tool is \code{Sweave}, which
 is used extensively by the \proglang{R} programming community.  The \code{Sweave}
 approach to reproducible research has spawned similar tools, such as
-\pkg{SASweave} and  \pkg{Statweave}, some of which support statistical languages other than \proglang{R},
+\code{SASweave} and  \code{Statweave}, some of which support statistical languages other than \proglang{R},
 and which target document preparation systems other than \LaTeX{},
 including Open Document Format and Microsoft Word
 \citep{Lenth:2007:SLP,baier07:_excel,kuhn10:_odfweav_packag,lenth09:_statw_users_manual}.
 \code{Sweave} and its descendants don't support code block re-organization
 during tangling and thus only partially support literate programming.
 
-Only \pkg{Scribble} and \pkg{Org-mode} provide full support for both literate
-programming and reproducible research.  \pkg{Scribble} is implemented as an
-extension to the \proglang{scheme} programming language.  \pkg{Scribble} makes use of the
+Only \code{Scribble} and \pkg{Org-mode} provide full support for both literate
+programming and reproducible research.  \code{Scribble} is implemented as an
+extension to the \proglang{scheme} programming language.  \code{Scribble} makes use of the
 lexical scoping of the underlying language to manage relations between
 prose and code.  \pkg{Org-mode} is the first tool that supports both literate
 programming using traditional \pkg{WEB}-style references and reproducible

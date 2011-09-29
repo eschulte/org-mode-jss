@@ -61,3 +61,6 @@
 (setq org-export-latex-listings nil)
 (setq org-export-latex-verbatim-wrap
       '("\\begin{Code}\n" . "\\end{Code}\n"))
+
+;; don't use the full set of Org-mode latex packages
+(setq org-export-latex-default-packages-alist nil)
