@@ -172,8 +172,7 @@ productive environment for authoring mixed prose and code projects
 a single export command.  This command executed the source code
 examples and generated the figures before exporting its content to a
 LaTeX file marked up according the journal's specification. The
-[[latex:pkg][Org-mode]] source for this paper is available online.[fn::
-See http://github.com/eschulte/org-mode-jss.]
+[[latex:pkg][Org-mode]] source for this paper is available in the supplementary material.
 
 * Background
   :PROPERTIES:
@@ -512,8 +511,7 @@ and matrix data are represented as tables where the columns are marked
 by vertical bars and rows are optionally separated by dashed lines as
 shown in the following example.  Org-mode provides a number of
 commands for natural table navigation and editing.  The Emacs
-mathematical tool, [[latex:pkg][calc]],[fn:: David Gillespie 1990,
-http://www.gnu.org/software/emacs/calc.html.] can be used to carry out
+mathematical tool, [[latex:pkg][calc]] \cite{calc}, can be used to carry out
 computations in tables.  This feature is similar to spreadsheet
 applications, but [[latex:pkg][Org-mode]] uses plain text to represent both data and
 formulas.
@@ -718,7 +716,7 @@ for cross-referencing.
 
 Much more information about controlling the evaluation of code and the
 handling of code results is available in the [[latex:pkg][Org-mode]]
-documentation.[fn:: See http://orgmode.org/manual/Working-With-Source-Code.html.]
+documentation \cite[Ch. 14]{dominik10:_org_mode_refer_manual}.
 
 *** Variables
 [[latex:pkg][Org-mode]] implements a simple system of passing arguments to code
@@ -806,16 +804,16 @@ the =org-confirm-babel-evaluate= variable.]
 
 ** Where to find information about Org-mode
 The official web site for [[latex:pkg][Org-mode]] is maintained by one of us (CD) at
-[[http://orgmode.org/]].  The site contains links to: the [[http://orgmode.org/index.html#sec-3_1][standard
-distribution]] distributed with Emacs, the [[http://orgmode.org/index.html#sec-3_2][development version]], and to
-[[http://orgmode.org/index.html#sec-3_3][alternative distributions]] packaged for a variety of operating systems.
+\url{http://orgmode.org/}.  The site contains links to: the standard
+distribution distributed with Emacs, the development version, and to
+alternative distributions packaged for a variety of operating systems.
 Documentation is available as a book
-\citep{dominik10:_org_mode_refer_manual} and in a [[http://orgmode.org/index.html#sec-4_1][variety of formats]]
-on-line. There is an [[http://orgmode.org/guide/index.html][on-line compact guide]] that can be downloaded as a
-40 page introduction to [[latex:pkg][Org-mode]], a [[http://orgmode.org/orgcard.pdf][reference card]], a list of
-[[http://orgmode.org/worg/org-faq.html][frequently asked questions]], more than 4 dozen [[http://orgmode.org/worg/org-tutorials/index.html][tutorials]], and a few
-[[http://orgmode.org/worg/org-tutorials/org-screencasts/index.html][screencasts]].  An active mailing list, emacs-orgmode@gnu.org, has a [[http://news.gmane.org/gmane.emacs.orgmode][web
-interface]].
+\citep{dominik10:_org_mode_refer_manual} and in a variety of formats
+on-line. There is an on-line compact guide that can be downloaded as a
+40 page introduction to [[latex:pkg][Org-mode]], a reference card, a list of
+frequently asked questions, more than 4 dozen tutorials, and a few
+screencasts.  An active mailing list, \email{emacs-orgmode@gnu.org},
+has a web interface available at \url{http://news.gmane.org/gmane.emacs.orgmode}.
 
 * Examples
    :PROPERTIES:
@@ -1055,8 +1053,7 @@ correct.
 #+end_src
 
 ** Literate programming---cocktail sort
-Cocktail sort[fn:: This implementation of Cocktail Sort is adapted
-from http://rosettacode.org/.] is a variation of bubble sort in which
+Cocktail sort \cite{rosettacode} is a variation of bubble sort in which
 the direction of array traversal is alternated with each pass.  As a
 result cocktail sort is more efficient than bubble sort for arrays
 with small elements located at the end of the array.
