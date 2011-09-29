@@ -511,7 +511,7 @@ and matrix data are represented as tables where the columns are marked
 by vertical bars and rows are optionally separated by dashed lines as
 shown in the following example.  Org-mode provides a number of
 commands for natural table navigation and editing.  The Emacs
-mathematical tool, [[latex:pkg][calc]] \cite{calc}, can be used to carry out
+mathematical tool, [[latex:code][calc]] \cite{calc}, can be used to carry out
 computations in tables.  This feature is similar to spreadsheet
 applications, but [[latex:pkg][Org-mode]] uses plain text to represent both data and
 formulas.
