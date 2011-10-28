@@ -539,31 +539,31 @@ passing system.
     :CUSTOM_ID: syntax
     :END:
 
-Data blocks that are preceded by a line that begins with =#+results:=,
+Data blocks that are preceded by a line that begins with =#+name:=,
 and are followed by a name unique within the document, can be accessed
 by code blocks. These can be /tables/, /example blocks/, or /links/.
 #+begin_src org
-  ,#+results: tabular-data
+  ,#+name: tabular-data
   ,| 1 |  2 |
   ,| 2 |  3 |
   ,| 3 |  5 |
   ,| 4 |  7 |
   ,| 5 | 11 |
 
-  ,#+results: scalar-data
+  ,#+name: scalar-data
   ,: 9
 
-  ,#+results: linked-data
+  ,#+name: linked-data
   ,[[http://external-data.org]]
 #+end_src
 
-Active code blocks are marked with a =#+source:= line, followed by a
+Active code blocks are marked with a =#+name:= line, followed by a
 name unique within the document.  Such blocks can be augmented by
 header arguments that control the way [[latex:pkg][Org-mode]] handles evaluation and
 export.  Any number of optional =#+headers:= lines may be used to
 split header arguments across multiple lines.
 #+begin_src org
-  ,#+source: <name>
+  ,#+name: <name>
   ,#+headers: <header arguments>
   ,#+begin_src <language> <header arguments>
   ,  <body>
@@ -589,7 +589,7 @@ in the [[latex:pkg][Org-mode]] buffer immediately following the code block, e.g.
   "This was last evaluated on #{Date.today}"
 #+end_src
 
-#+results:
+#+name:
 : This was last evaluated on 2010-12-21
 
 By default, a code block is evaluated in a dedicated system process
@@ -854,7 +854,7 @@ by the [[latex:proglang][Python]] function into the [[latex:pkg][Org-mode]] docu
 =pascals-triangle=.  This table can be referenced by other code
 blocks.
 #+begin_src org
-   ,#+source: pascals-triangle
+   ,#+name: pascals-triangle
    ,#+begin_src python :var n=5 :exports none :return pascals_triangle(5)
    ,  def pascals_triangle(n):
    ,      if n == 0:
@@ -863,6 +863,8 @@ blocks.
    ,      prev_row = prev_triangle[n-1]
    ,      this_row = map(sum, zip([0] + prev_row, prev_row + [0]))
    ,      return prev_triangle + [this_row]
+   ,  
+   ,  return pascals_triangle(n)
    ,#+end_src
    ,
    ,#+results: pascals-triangle
@@ -874,7 +876,7 @@ blocks.
    ,| 1 | 5 | 10 | 10 | 5 | 1 |
 #+end_src
 
-#+source: pascals-triangle
+#+name: pascals-triangle
 #+begin_src python :var n=5 :exports none
   def pascals_triangle(n):
       if n == 0:
@@ -883,6 +885,8 @@ blocks.
       prev_row = prev_triangle[n-1]
       this_row = map(sum, zip([0] + prev_row, prev_row + [0]))
       return prev_triangle + [this_row]
+
+  return pascals_triangle(n)
 #+end_src
 
 #+results: pascals-triangle
@@ -904,7 +908,7 @@ block, and not for inclusion into the exported document, as indicated
 by the =:exports none= header argument.
 
 #+begin_src org
-   ,#+source: pst-to-dot
+   ,#+name: pst-to-dot
    ,#+begin_src python :var pst=pascals-triangle :results output :exports none
    ,  def node(i, j):
    ,        return '"%d_%d"' % (i+1, j+1)
@@ -928,7 +932,7 @@ by the =:exports none= header argument.
    ,#+end_src
 #+end_src
 
-#+source: pst-to-dot
+#+name: pst-to-dot
 #+begin_src python :var pst=pascals-triangle :results output :exports none
   def node(i, j):
         return '"%d_%d"' % (i+1, j+1)
@@ -966,7 +970,7 @@ in [[latex:pkg][Org-mode]] syntax and in exported form (Figure
 \ref{pascals-triangle-fig}).
 
 #+begin_src org
-  ,#+source: pst-to-fig
+  ,#+name: pst-to-fig
   ,#+headers: :file pascals-triangle.pdf :cmdline -Tpdf
   ,#+begin_src dot :var pst-vals=pst-to-dot :exports results
   ,  graph {
@@ -980,7 +984,7 @@ in [[latex:pkg][Org-mode]] syntax and in exported form (Figure
   ,[[file:pascals-triangle.pdf]]
 #+end_src
 
-#+source: pst-to-fig
+#+name: pst-to-fig
 #+headers: :file pascals-triangle.pdf :cmdline -Tpdf
 #+begin_src dot :var pst-vals=pst-to-dot :exports results
   graph {
@@ -1009,7 +1013,7 @@ diagonals, confirming that the implementation of Pascal's triangle is
 correct.
 
 #+begin_src org
-  ,#+source: pst-check
+  ,#+name: pst-check
   ,#+begin_src emacs-lisp :var row='(1 2 1) :var n=0 :exports code
   ,  (defun fib (n)
   ,    (if (<= n 2)
@@ -1039,7 +1043,7 @@ correct.
   ,#+TBLFM: @2$4='(sbe pst-check (row @7$1..@7$2) (n @1$7))
 #+end_src
 
-#+source: pst-check
+#+name: pst-check
 #+begin_src emacs-lisp :var row='(1 2 1) :var n=0 :exports none
   (defun fib (n)
     (if (<= n 2)
@@ -1079,7 +1083,7 @@ command-line mechanism to accept input and return results in block
 specifies the name of the target source code file.
 
 #+begin_src org :noweb tangle
-  ,#+source: cocktail.c
+  ,#+name: cocktail.c
   ,#+begin_src C :noweb yes :tangle cocktail.c
   ,  #include <stdio.h>
   ,  <<cocktail-sort>>
@@ -1087,7 +1091,7 @@ specifies the name of the target source code file.
   ,#+end_src
 #+end_src
 
-#+source: cocktail.c
+#+name: cocktail.c
 #+begin_src C :noweb yes :tangle cocktail.c :exports none
   #include <stdio.h>
   <<cocktail-sort>>
@@ -1099,7 +1103,7 @@ arguments, call the sorting algorithm on the supplied arguments, and
 print the results.
 
 #+begin_src org
-  ,#+source: main
+  ,#+name: main
   ,#+begin_src C
   ,  int main(int argc, char *argv[]) {
   ,    int lst[argc-1];
@@ -1114,7 +1118,7 @@ print the results.
   ,#+end_src
 #+end_src
 
-#+source: main
+#+name: main
 #+begin_src C :exports none
   int main(int argc, char *argv[]) {
     int lst[argc-1];
@@ -1136,7 +1140,7 @@ the elements are already in sorted order.  This process continues
 until no more swaps have been made and the array is sorted.
 
 #+begin_src org :noweb tangle
-  ,#+source: cocktail-sort
+  ,#+name: cocktail-sort
   ,#+begin_src C :noweb yes
   ,  void sort(int *a, unsigned int l)
   ,  {
@@ -1157,7 +1161,7 @@ until no more swaps have been made and the array is sorted.
   ,#+end_src
 #+end_src
 
-#+source: cocktail-sort
+#+name: cocktail-sort
 #+begin_src C :noweb yes :exports none
   void sort(int *a, unsigned int l)
   {
@@ -1182,7 +1186,7 @@ elements that are not in sorted order.  It sets the =swapped= flag if
 it performs a swap.
 
 #+begin_src org
-  ,#+source: swap
+  ,#+name: swap
   ,#+begin_src C
   ,  if ( a[i] > a[i+1] ) {
   ,    int temp = a[i];
@@ -1193,7 +1197,7 @@ it performs a swap.
   ,#+end_src
 #+end_src
 
-#+source: swap
+#+name: swap
 #+begin_src C :exports none
   if ( a[i] > a[i+1] ) {
     int temp = a[i];
@@ -1259,7 +1263,7 @@ standard command-line tools.
 # ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/v2/v2.temperature.readme
 
 #+begin_src org
-   ,#+source: raw-temps
+   ,#+name: raw-temps
    ,#+headers: :results output :file raw-temps.csv
    ,#+begin_src sh :exports none
    ,  curl ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/v2/v2.mean_adj.Z \
@@ -1269,7 +1273,7 @@ standard command-line tools.
    ,      |perl -pe 's/ +/,/g'
    ,#+end_src
    ,
-   ,#+source: country-codes
+   ,#+name: country-codes
    ,#+headers: :results output :file country-codes.csv
    ,#+begin_src sh :exports none
    ,  curl ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/v2/v2.slp.country.codes \
@@ -1278,7 +1282,7 @@ standard command-line tools.
    ,#+end_src
 #+end_src
 
-#+source: raw-temps
+#+name: raw-temps
 #+headers: :results output :file raw-temps.csv
 #+begin_src sh :exports none
   curl ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/v2/v2.mean_adj.Z \
@@ -1288,7 +1292,7 @@ standard command-line tools.
       |perl -pe 's/ +/,/g'
 #+end_src
 
-#+source: country-codes
+#+name: country-codes
 #+headers: :results output :file country-codes.csv
 #+begin_src sh :exports none
   curl ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/v2/v2.slp.country.codes \
@@ -1336,7 +1340,7 @@ exits, so they can be manipulated by other [[latex:proglang][R]] code blocks tha
 =*R-climate*= session.
 
 #+begin_src org
-   ,#+source: R-init
+   ,#+name: R-init
    ,#+headers: :var dbname="climate.sqlite"
    ,#+begin_src R :session *R-climate* :exports results :results silent
    ,  library("RSQLite")
@@ -1354,7 +1358,7 @@ exits, so they can be manipulated by other [[latex:proglang][R]] code blocks tha
    ,#+end_src
 #+end_src
 
-#+source: R-init
+#+name: R-init
 #+headers: :var dbname="climate.sqlite"
 #+begin_src R :session *R-climate* :exports none :results silent
     library("RSQLite")
@@ -1380,7 +1384,7 @@ incorporation into the exported document (Figure
 \ref{fig:climate-trend}).
 
 #+begin_src org
-   ,#+srcname: R-graph
+   ,#+name: R-graph
    ,#+headers: :results graphics :file temp-trends.pdf
    ,#+begin_src R :session *R-climate* :exports results
    ,  include.station <- function(station)
@@ -1398,7 +1402,7 @@ incorporation into the exported document (Figure
    ,[[file:temp-trends.pdf]]
 #+end_src
 
-#+srcname: R-graph
+#+name: R-graph
 #+headers: :results graphics :file temp-trends.pdf
 #+begin_src R :session *R-climate* :exports results
   include.station <- function(station)

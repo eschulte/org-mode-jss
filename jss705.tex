@@ -554,36 +554,36 @@ passing system.
 \label{syntax}
 
 
-Data blocks that are preceded by a line that begins with \texttt{\#+results:},
+Data blocks that are preceded by a line that begins with \texttt{\#+name:},
 and are followed by a name unique within the document, can be accessed
 by code blocks. These can be \emph{tables}, \emph{example blocks}, or \emph{links}.
 
 \begin{Code}
-#+results: tabular-data
+#+name: tabular-data
 | 1 |  2 |
 | 2 |  3 |
 | 3 |  5 |
 | 4 |  7 |
 | 5 | 11 |
 
-#+results: scalar-data
+#+name: scalar-data
 : 9
 
-#+results: linked-data
+#+name: linked-data
 [[http://external-data.org]]
 \end{Code}
 
 
 
 
-Active code blocks are marked with a \texttt{\#+source:} line, followed by a
+Active code blocks are marked with a \texttt{\#+name:} line, followed by a
 name unique within the document.  Such blocks can be augmented by
 header arguments that control the way \pkg{Org-mode} handles evaluation and
 export.  Any number of optional \texttt{\#+headers:} lines may be used to
 split header arguments across multiple lines.
 
 \begin{Code}
-#+source: <name>
+#+name: <name>
 #+headers: <header arguments>
 #+begin_src <language> <header arguments>
   <body>
@@ -872,7 +872,7 @@ by the \proglang{Python} function into the \pkg{Org-mode} document as a table na
 blocks.
 
 \begin{Code}
-#+source: pascals-triangle
+#+name: pascals-triangle
 #+begin_src python :var n=5 :exports none :return pascals_triangle(5)
   def pascals_triangle(n):
       if n == 0:
@@ -881,6 +881,8 @@ blocks.
       prev_row = prev_triangle[n-1]
       this_row = map(sum, zip([0] + prev_row, prev_row + [0]))
       return prev_triangle + [this_row]
+  
+  return pascals_triangle(n)
 #+end_src
 
 #+results: pascals-triangle
@@ -905,7 +907,7 @@ by the \texttt{:exports none} header argument.
 
 
 \begin{Code}
-#+source: pst-to-dot
+#+name: pst-to-dot
 #+begin_src python :var pst=pascals-triangle :results output :exports none
   def node(i, j):
         return '"%d_%d"' % (i+1, j+1)
@@ -950,7 +952,7 @@ in \pkg{Org-mode} syntax and in exported form (Figure
 
 
 \begin{Code}
-#+source: pst-to-fig
+#+name: pst-to-fig
 #+headers: :file pascals-triangle.pdf :cmdline -Tpdf
 #+begin_src dot :var pst-vals=pst-to-dot :exports results
   graph {
@@ -992,7 +994,7 @@ correct.
 
 
 \begin{Code}
-#+source: pst-check
+#+name: pst-check
 #+begin_src emacs-lisp :var row='(1 2 1) :var n=0 :exports code
   (defun fib (n)
     (if (<= n 2)
@@ -1049,7 +1051,7 @@ specifies the name of the target source code file.
 
 
 \begin{Code}
-#+source: cocktail.c
+#+name: cocktail.c
 #+begin_src C :noweb yes :tangle cocktail.c
   #include <stdio.h>
   <<cocktail-sort>>
@@ -1068,7 +1070,7 @@ print the results.
 
 
 \begin{Code}
-#+source: main
+#+name: main
 #+begin_src C
   int main(int argc, char *argv[]) {
     int lst[argc-1];
@@ -1097,7 +1099,7 @@ until no more swaps have been made and the array is sorted.
 
 
 \begin{Code}
-#+source: cocktail-sort
+#+name: cocktail-sort
 #+begin_src C :noweb yes
   void sort(int *a, unsigned int l)
   {
@@ -1129,7 +1131,7 @@ it performs a swap.
 
 
 \begin{Code}
-#+source: swap
+#+name: swap
 #+begin_src C
   if ( a[i] > a[i+1] ) {
     int temp = a[i];
@@ -1200,7 +1202,7 @@ standard command-line tools.
 
 
 \begin{Code}
-#+source: raw-temps
+#+name: raw-temps
 #+headers: :results output :file raw-temps.csv
 #+begin_src sh :exports none
   curl ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/v2/v2.mean_adj.Z \
@@ -1210,7 +1212,7 @@ standard command-line tools.
       |perl -pe 's/ +/,/g'
 #+end_src
 
-#+source: country-codes
+#+name: country-codes
 #+headers: :results output :file country-codes.csv
 #+begin_src sh :exports none
   curl ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/v2/v2.slp.country.codes \
@@ -1260,7 +1262,7 @@ exits, so they can be manipulated by other \proglang{R} code blocks that use the
 
 
 \begin{Code}
-#+source: R-init
+#+name: R-init
 #+headers: :var dbname="climate.sqlite"
 #+begin_src R :session *R-climate* :exports results :results silent
   library("RSQLite")
@@ -1293,7 +1295,7 @@ incorporation into the exported document (Figure
 
 
 \begin{Code}
-#+srcname: R-graph
+#+name: R-graph
 #+headers: :results graphics :file temp-trends.pdf
 #+begin_src R :session *R-climate* :exports results
   include.station <- function(station)
